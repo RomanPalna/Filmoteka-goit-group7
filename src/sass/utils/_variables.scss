@@ -1,14 +1,21 @@
 // Основные и функции
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap');
 
+// Colors
 $headerTextColor: #ffffff;
 $titleTextColor: #ff6b08;
 $footerColor: #545454;
 $filmTitleColor: #000000;
 $filmDescriptionColor: #8c8c8c;
 $errorTextColor: #ff001b;
-// Анимация
+
+// Animation
 $animationTimingFunction: cubic-bezier(0.4, 0, 0.2, 1);
 
-// Шрифт
+// Fonts
 $Roboto: Roboto;
+
+//Containers
+$mobile: 320px;
+$tablet: 768px;
+$desktop: 1024px;
