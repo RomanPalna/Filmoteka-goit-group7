@@ -1,24 +1,24 @@
 {
-  "name": "goit-js-hw-13-image-finder",
+  "name": "Filmoteka-goit-group7",
   "version": "1.0.0",
-  "description": "food-service",
+  "description": "group project",
   "main": "index.js",
   "scripts": {
     "dev": "parcel src/index.html",
-    "build": "parcel build src/index.html --public-url /goit-js-hw-13-image-finder/",
+    "build": "parcel build src/index.html --public-url /Filmoteka-goit-group7/",
     "deploy": "gh-pages -d dist",
     "predeploy": "npm run build"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/RomanPalna/goit-js-hw-13-image-finder.git"
+    "url": "git+https://github.com/RomanPalna/Filmoteka-goit-group7.git"
   },
   "author": "Palna Roman",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/RomanPalna/goit-js-hw-13-image-finder/issues"
+    "url": "https://github.com/RomanPalna/Filmoteka-goit-group7/issues"
   },
-  "homepage": "https://RomanPalna.github.io/goit-js-hw-13-image-finder",
+  "homepage": "https://RomanPalna.github.io/Filmoteka-goit-group7",
   "devDependencies": {
     "parcel-bundler": "^1.12.4",
     "parcel-plugin-custom-dist-structure": "^1.1.16",
@@ -29,15 +29,13 @@
     "lodash.debounce": "^4.0.8",
     "parcel-plugin-nuke-dist": "^1.0.1"
   },
-
   "browserslist": [
-  "last 3 and_chr versions",
-  "last 3 chrome versions",
-  "last 3 opera versions",
-  "last 3 ios_saf versions",
-  "last 3 safari versions"
-],
-
+    "last 3 and_chr versions",
+    "last 3 chrome versions",
+    "last 3 opera versions",
+    "last 3 ios_saf versions",
+    "last 3 safari versions"
+  ],
   "customDistStructure": {
     "config": {
       ".css": "css",
