@@ -2,7 +2,7 @@ const BASE_URL = 'https://api.themoviedb.org/3/trending/all/week?';
 
 export default class filmApi {
   constructor() {
-    this.page = 1;
+    this.page = 2;
   }
   async fetchFilms() {
     const searchParams = new URLSearchParams({
