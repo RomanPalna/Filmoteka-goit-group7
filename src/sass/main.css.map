@@ -5,7 +5,9 @@
         "main.scss",
         "utils/_base.scss",
         "utils/_normalize.scss",
-        "utils/_variables.scss"
+        "utils/_variables.scss",
+        "components/_header.scss",
+        "components/_main.scss"
     ],
     "names": [],
     "file": "main.css"
