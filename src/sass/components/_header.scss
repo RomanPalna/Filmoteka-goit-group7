@@ -47,7 +47,7 @@
         to right,
         rgba(0, 0, 0, 0.56),
         rgba(0, 0, 0, 0.56)), 
-         url('../img/header-mobile-1x.jpg');
+         url('/src/images/header/header-mobile.jpg');
          @media screen and (min-device-pixel-ratio: 2),
                 screen and (min-resolution: 192dpi),
                 screen and (min-resolution: 2dppx) {
@@ -55,7 +55,7 @@
                     to right,
                     rgba(0, 0, 0, 0.56),
                     rgba(0, 0, 0, 0.56)),
-                    url('../img/header-mobile-2x.jpg');
+                    url('/src/images/header/header-mobile.jpg');
                 }
                 
      
@@ -67,14 +67,14 @@
                 to right,
                 rgba(0, 0, 0, 0.56),
                 rgba(0, 0, 0, 0.56)),
-                    url('../img/tablet-header-1x.jpg');
+                    url('/src/images/header/header-tablet.jpg');
                     @media screen and (min-device-pixel-ratio: 2),
                         screen and (min-resolution: 192dpi),
                         screen and (min-resolution: 2dppx) {
                         background-image: linear-gradient(to right,
                         rgba(0, 0, 0, 0.56),
                         rgba(0, 0, 0, 0.56)),
-                            url('../img/tablet-header-2x.jpg');
+                            url('/src/images/header/header-tablet.jpg');
                         }
         }
 
@@ -84,14 +84,14 @@
             background-image: linear-gradient(to right,
                    rgba(0, 0, 0, 0.56),
                    rgba(0, 0, 0, 0.56)),
-                    url('../img/desktop-header-1x.jpg');
+                    url('/src/images/header/header-desktop.jpg');
                     @media screen and (min-device-pixel-ratio: 2),
                         screen and (min-resolution: 192dpi),
                         screen and (min-resolution: 2dppx) {
                             background-image: linear-gradient(to right,
                             rgba(0, 0, 0, 0.56),
                             rgba(0, 0, 0, 0.56)),
-                            url('../img/desktop-header-2x.jpg');
+                            url('/src/images/header/header-desktop.jpg');
                         }
         }
 }
