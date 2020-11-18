@@ -539,4 +539,66 @@ summary {
 .buttons-container {
   text-align: center;
 }
+
+.page-footer {
+  background-color: #F7F7F7;
+}
+
+.icon-favorite {
+  background-color: #FF6B08;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+.pagefoot {
+  padding-top: 30px;
+  padding-bottom: 28px;
+}
+
+@media screen and (min-width: 768px) {
+  .pagefoot {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .pagefoot {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+}
+
+.text-footer {
+  display: block;
+  text-align: center;
+  margin: 0;
+  font-size: 14px;
+  line-height: 1.17;
+  font-weight: 400;
+  color: #545454;
+  margin-bottom: 10px;
+}
+
+@media screen and (min-width: 768px) {
+  .text-footer {
+    font-size: 16px;
+    margin-bottom: 0;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .text-footer {
+    font-size: 16px;
+    margin-bottom: 0;
+  }
+}
 /*# sourceMappingURL=main.css.map */
