@@ -1,0 +1,46 @@
+
+.page-footer {
+    background-color:  #F7F7F7;
+
+}
+
+
+.pagefoot {
+    padding-top: 30px;
+    padding-bottom: 28px;
+
+    @media screen and (min-width: 768px) {
+        display: flex;
+        justify-content: center;
+      }
+
+     @media screen and (min-width: 1024px) {
+        display: flex;
+        justify-content: center;
+      }
+
+ }  
+ 
+
+.text-footer {
+    display: block;
+    text-align: center;
+    margin: 0;
+    font-size: 14px;
+    line-height: 1.17;
+    font-weight: 400;
+    color: $footerColor;
+    margin-bottom: 10px;
+
+    @media screen and (min-width: 768px) {
+        font-size: 16px;
+        margin-bottom: 0;
+      }
+
+     @media screen and (min-width: 1024px) {
+        font-size: 16px;
+        margin-bottom: 0;
+      }
+
+    
+}
