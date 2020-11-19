@@ -1,27 +1,22 @@
+
 .header  {
     display: block;
     padding-top: 45px;
     padding-bottom: 45px;
     height: 230px;
     text-align: center;
-    
 } 
  
 
 
 .overlay {
-
     height: 230px;
-    // max-width: 480px;
-  
     margin-left: auto;
     margin-right: auto;
-
     background-color: black;
     background-position:  center;
     background-size: cover;
     background-repeat: no-repeat;
-    
     background-image: linear-gradient(
         to right,
         rgba(0, 0, 0, 0.56),
@@ -76,7 +71,6 @@
 }
 
 .header-link { 
-    // display: flex;
     display: inline-block;
     color: white;
     text-decoration: none;
@@ -123,12 +117,7 @@
     align-items: center;
 }
 .logo-icon {
-    width: 24px;
-    height: 24px;
-    background-color: gray;
-    color: wheat;
-    margin-right: 112px;
-    line-height: 14,06px;
+    background-color: beige;
     @media screen and (min-width: 768px) {
         margin-right: 10px;
     }
@@ -179,7 +168,6 @@
         text-align: start;
     }
     
-    // display: none;
     @media screen and (min-width: 768px) {
         text-align: center;
     }
@@ -194,25 +182,21 @@
         width: 136px;
     }
 }
-.button-watched {
+.btn-is-active {
     @extend %button;
     background-color: #FF6B01;
-    margin-right: 15px;
- 
 }
-
-.button-queue {
+.btn-not-active {
     @extend %button;
     background-color: rgba(255, 255, 255, 0);
     border: 1px solid white;
-    // @media screen and (min-width: 768px) {
-    //     width: 136px;
-    // }
+}
+
+%button + %button {
+    margin-left: 15px;
 }
 
 .buttons-container {
-    text-align: center;
-    // display: none ;
-  
+    text-align: center; 
 }
  
