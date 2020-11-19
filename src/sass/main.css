@@ -348,13 +348,13 @@ summary {
 }
 
 .btn-is-active + .btn-is-active, .btn-not-active + .btn-is-active, .button-modal-is-active + .btn-is-active, .button-modal + .btn-is-active, .btn-is-active + .btn-not-active, .btn-not-active + .btn-not-active, .button-modal-is-active + .btn-not-active, .button-modal + .btn-not-active, .btn-is-active + .button-modal-is-active, .btn-not-active + .button-modal-is-active, .button-modal-is-active + .button-modal-is-active, .button-modal + .button-modal-is-active, .btn-is-active + .button-modal, .btn-not-active + .button-modal, .button-modal-is-active + .button-modal, .button-modal + .button-modal {
-  margin-left: 15px;
+  margin-left: 13px;
 }
 
 .button-modal-is-active {
   font-size: 12px;
   line-height: 16px;
-  width: 136px;
+  max-width: 134px;
   background-color: #ff6b08;
   color: #ffffff;
 }
@@ -364,7 +364,7 @@ summary {
   line-height: 16px;
   border: 1px solid #000000;
   color: #000000;
-  width: 136px;
+  max-width: 134px;
 }
 
 .buttons-container {
@@ -379,7 +379,7 @@ summary {
   text-align: center;
 }
 
-.overlay {
+.library .header.overlay {
   height: 230px;
   margin-left: auto;
   margin-right: auto;
@@ -392,14 +392,14 @@ summary {
 }
 
 @media screen and (min-device-pixel-ratio: 2), screen and (-webkit-min-device-pixel-ratio: 2), screen and (min-resolution: 192dpi), screen and (min-resolution: 2dppx) {
-  .overlay {
+  .library .header.overlay {
     background-image: -webkit-gradient(linear, left top, right top, from(rgba(0, 0, 0, 0.56)), to(rgba(0, 0, 0, 0.56))), url("/images/header/header-mobile.jpg");
     background-image: linear-gradient(to right, rgba(0, 0, 0, 0.56), rgba(0, 0, 0, 0.56)), url("/images/header/header-mobile.jpg");
   }
 }
 
 @media screen and (min-width: 768px) {
-  .overlay {
+  .library .header.overlay {
     max-width: 768px;
     background-image: -webkit-gradient(linear, left top, right top, from(rgba(0, 0, 0, 0.56)), to(rgba(0, 0, 0, 0.56))), url("/images/header/header-tablet.jpg");
     background-image: linear-gradient(to right, rgba(0, 0, 0, 0.56), rgba(0, 0, 0, 0.56)), url("/images/header/header-tablet.jpg");
@@ -407,14 +407,14 @@ summary {
 }
 
 @media screen and (min-width: 768px) and (min-device-pixel-ratio: 2), screen and (min-width: 768px) and (-webkit-min-device-pixel-ratio: 2), screen and (min-width: 768px) and (min-resolution: 192dpi), screen and (min-width: 768px) and (min-resolution: 2dppx) {
-  .overlay {
+  .library .header.overlay {
     background-image: -webkit-gradient(linear, left top, right top, from(rgba(0, 0, 0, 0.56)), to(rgba(0, 0, 0, 0.56))), url("/images/header/header-tablet.jpg");
     background-image: linear-gradient(to right, rgba(0, 0, 0, 0.56), rgba(0, 0, 0, 0.56)), url("/images/header/header-tablet.jpg");
   }
 }
 
 @media screen and (min-width: 1024px) {
-  .overlay {
+  .library .header.overlay {
     max-width: 1600px;
     background-image: -webkit-gradient(linear, left top, right top, from(rgba(0, 0, 0, 0.56)), to(rgba(0, 0, 0, 0.56))), url("/images/header/header-desktop.jpg");
     background-image: linear-gradient(to right, rgba(0, 0, 0, 0.56), rgba(0, 0, 0, 0.56)), url("/images/header/header-desktop.jpg");
@@ -422,9 +422,107 @@ summary {
 }
 
 @media screen and (min-width: 1024px) and (min-device-pixel-ratio: 2), screen and (min-width: 1024px) and (-webkit-min-device-pixel-ratio: 2), screen and (min-width: 1024px) and (min-resolution: 192dpi), screen and (min-width: 1024px) and (min-resolution: 2dppx) {
-  .overlay {
+  .library .header.overlay {
     background-image: -webkit-gradient(linear, left top, right top, from(rgba(0, 0, 0, 0.56)), to(rgba(0, 0, 0, 0.56))), url("/images/header/header-desktop.jpg");
     background-image: linear-gradient(to right, rgba(0, 0, 0, 0.56), rgba(0, 0, 0, 0.56)), url("/images/header/header-desktop.jpg");
+  }
+}
+
+.header.overlay {
+  height: 230px;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: #000000;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-image: -webkit-gradient(linear, left top, right top, from(rgba(0, 0, 0, 0.56)), to(rgba(0, 0, 0, 0.56))), url("/images/header/header-mobile.jpg");
+  background-image: linear-gradient(to right, rgba(0, 0, 0, 0.56), rgba(0, 0, 0, 0.56)), url("/images/header/header-mobile.jpg");
+}
+
+@media screen and (min-device-pixel-ratio: 2), screen and (-webkit-min-device-pixel-ratio: 2), screen and (min-resolution: 192dpi), screen and (min-resolution: 2dppx) {
+  .header.overlay {
+    background-image: -webkit-gradient(linear, left top, right top, from(rgba(0, 0, 0, 0.56)), to(rgba(0, 0, 0, 0.56))), url("/images/header/header-mobile.jpg");
+    background-image: linear-gradient(to right, rgba(0, 0, 0, 0.56), rgba(0, 0, 0, 0.56)), url("/images/header/header-mobile.jpg");
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .header.overlay {
+    max-width: 768px;
+    background-image: -webkit-gradient(linear, left top, right top, from(rgba(0, 0, 0, 0.56)), to(rgba(0, 0, 0, 0.56))), url("/images/header/header-tablet.jpg");
+    background-image: linear-gradient(to right, rgba(0, 0, 0, 0.56), rgba(0, 0, 0, 0.56)), url("/images/header/header-tablet.jpg");
+  }
+}
+
+@media screen and (min-width: 768px) and (min-device-pixel-ratio: 2), screen and (min-width: 768px) and (-webkit-min-device-pixel-ratio: 2), screen and (min-width: 768px) and (min-resolution: 192dpi), screen and (min-width: 768px) and (min-resolution: 2dppx) {
+  .header.overlay {
+    background-image: -webkit-gradient(linear, left top, right top, from(rgba(0, 0, 0, 0.56)), to(rgba(0, 0, 0, 0.56))), url("/images/header/header-tablet.jpg");
+    background-image: linear-gradient(to right, rgba(0, 0, 0, 0.56), rgba(0, 0, 0, 0.56)), url("/images/header/header-tablet.jpg");
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .header.overlay {
+    max-width: 1600px;
+    background-image: -webkit-gradient(linear, left top, right top, from(rgba(0, 0, 0, 0.56)), to(rgba(0, 0, 0, 0.56))), url("/images/header/header-desktop.jpg");
+    background-image: linear-gradient(to right, rgba(0, 0, 0, 0.56), rgba(0, 0, 0, 0.56)), url("/images/header/header-desktop.jpg");
+  }
+}
+
+@media screen and (min-width: 1024px) and (min-device-pixel-ratio: 2), screen and (min-width: 1024px) and (-webkit-min-device-pixel-ratio: 2), screen and (min-width: 1024px) and (min-resolution: 192dpi), screen and (min-width: 1024px) and (min-resolution: 2dppx) {
+  .header.overlay {
+    background-image: -webkit-gradient(linear, left top, right top, from(rgba(0, 0, 0, 0.56)), to(rgba(0, 0, 0, 0.56))), url("/images/header/header-desktop.jpg");
+    background-image: linear-gradient(to right, rgba(0, 0, 0, 0.56), rgba(0, 0, 0, 0.56)), url("/images/header/header-desktop.jpg");
+  }
+}
+
+.library .header.overlay {
+  height: 230px;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: #000000;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-image: -webkit-gradient(linear, left top, right top, from(rgba(0, 0, 0, 0.56)), to(rgba(0, 0, 0, 0.56))), url("/images/header/library-mobile.jpg");
+  background-image: linear-gradient(to right, rgba(0, 0, 0, 0.56), rgba(0, 0, 0, 0.56)), url("/images/header/library-mobile.jpg");
+}
+
+@media screen and (min-device-pixel-ratio: 2), screen and (-webkit-min-device-pixel-ratio: 2), screen and (min-resolution: 192dpi), screen and (min-resolution: 2dppx) {
+  .library .header.overlay {
+    background-image: -webkit-gradient(linear, left top, right top, from(rgba(0, 0, 0, 0.56)), to(rgba(0, 0, 0, 0.56))), url("/images/header/library-mobile.jpg");
+    background-image: linear-gradient(to right, rgba(0, 0, 0, 0.56), rgba(0, 0, 0, 0.56)), url("/images/header/library-mobile.jpg");
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .library .header.overlay {
+    max-width: 768px;
+    background-image: -webkit-gradient(linear, left top, right top, from(rgba(0, 0, 0, 0.56)), to(rgba(0, 0, 0, 0.56))), url("/images/header/library-tablet.jpg");
+    background-image: linear-gradient(to right, rgba(0, 0, 0, 0.56), rgba(0, 0, 0, 0.56)), url("/images/header/library-tablet.jpg");
+  }
+}
+
+@media screen and (min-width: 768px) and (min-device-pixel-ratio: 2), screen and (min-width: 768px) and (-webkit-min-device-pixel-ratio: 2), screen and (min-width: 768px) and (min-resolution: 192dpi), screen and (min-width: 768px) and (min-resolution: 2dppx) {
+  .library .header.overlay {
+    background-image: -webkit-gradient(linear, left top, right top, from(rgba(0, 0, 0, 0.56)), to(rgba(0, 0, 0, 0.56))), url("/images/header/library-tablet.jpg");
+    background-image: linear-gradient(to right, rgba(0, 0, 0, 0.56), rgba(0, 0, 0, 0.56)), url("/images/header/library-tablet.jpg");
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .library .header.overlay {
+    max-width: 1600px;
+    background-image: -webkit-gradient(linear, left top, right top, from(rgba(0, 0, 0, 0.56)), to(rgba(0, 0, 0, 0.56))), url("/images/header/library-desktop.jpg");
+    background-image: linear-gradient(to right, rgba(0, 0, 0, 0.56), rgba(0, 0, 0, 0.56)), url("/images/header/library-desktop.jpg");
+  }
+}
+
+@media screen and (min-width: 1024px) and (min-device-pixel-ratio: 2), screen and (min-width: 1024px) and (-webkit-min-device-pixel-ratio: 2), screen and (min-width: 1024px) and (min-resolution: 192dpi), screen and (min-width: 1024px) and (min-resolution: 2dppx) {
+  .library .header.overlay {
+    background-image: -webkit-gradient(linear, left top, right top, from(rgba(0, 0, 0, 0.56)), to(rgba(0, 0, 0, 0.56))), url("/images/header/library-desktop.jpg");
+    background-image: linear-gradient(to right, rgba(0, 0, 0, 0.56), rgba(0, 0, 0, 0.56)), url("/images/header/library-desktop.jpg");
   }
 }
 
@@ -516,6 +614,8 @@ summary {
 }
 
 .search-input {
+  color: #C4C4C4;
+  outline: black;
   height: 20px;
   background-color: rgba(0, 0, 0, 0);
   border-top: 0;
@@ -705,6 +805,7 @@ summary {
 }
 
 .modal {
+  overflow-y: scroll;
   position: relative;
   padding: 20px;
   background-color: #fff;
@@ -717,6 +818,9 @@ summary {
 
 @media screen and (min-width: 768px) {
   .modal {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
     position: absolute;
     top: 50%;
     left: 50%;
@@ -733,6 +837,7 @@ summary {
   font-weight: 500;
   font-size: 20px;
   line-height: 23px;
+  margin-bottom: 20px;
 }
 
 .film-info {
@@ -743,7 +848,7 @@ summary {
 
 .data-film-titles {
   display: inline-block;
-  width: 146px;
+  width: 108px;
 }
 
 .dynamic-data {
@@ -774,5 +879,44 @@ summary {
   font-weight: 500;
   font-size: 12px;
   line-height: 20px;
+}
+
+.raiting-flat {
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 16px;
+  width: 36px;
+  height: 16px;
+  background-color: #ff6b08;
+  color: #ffffff;
+  border-radius: 5px;
+}
+
+.votes-count {
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 16px;
+  width: 36px;
+  height: 16px;
+  background-color: #F7F7F7;
+  border-radius: 5px;
+  margin-top: 11px;
+}
+
+.film-info-container {
+  width: 280px;
+}
+
+@media screen and (min-width: 768px) {
+  .film-info-container {
+    margin-left: 30px;
+    width: 294px;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .film-info-container {
+    width: 426px;
+  }
 }
 /*# sourceMappingURL=main.css.map */

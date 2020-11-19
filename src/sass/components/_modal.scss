@@ -20,6 +20,7 @@
     transition: $animationTimingFunction;
 }
 .modal {
+    overflow-y: scroll;
     position: relative;
     padding: 20px;
     background-color: #fff;
@@ -32,7 +33,7 @@
       
     }
     @media screen and (min-width: $tablet)  {
-        // width: $tablet;
+        display: flex;
         position: absolute;
         top: 50%;
         left: 50%;
@@ -46,12 +47,14 @@
 
 .modal-image {
     border-radius: 5px;
+    
 }
 
 .film-title-modal {
     font-weight: 500;
     font-size: 20px;
     line-height: 23px;
+    margin-bottom: 20px;
 }
 
 .film-info {
@@ -60,7 +63,7 @@
 
 .data-film-titles {
     display: inline-block;
-    width: 146px;
+    width: 108px;
 }
 
 .dynamic-data {
@@ -87,8 +90,47 @@
     line-height: 16px;
 }
 
+
 .film-about {
+    
     font-weight: 500;
     font-size: 12px;
     line-height: 20px;
+}
+
+// .dynamic-data {
+//     position: relative;
+// }
+
+.raiting-flat {
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 16px;
+    width: 36px;
+    height: 16px;
+    background-color: $accentColor;
+    color: $headerTextColor;
+    border-radius: 5px;
+}
+
+.votes-count {
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 16px;
+    width: 36px;
+    height: 16px;
+    background-color: #F7F7F7;
+    border-radius: 5px;
+    margin-top: 11px;
+}
+
+.film-info-container {
+    width: 280px;
+    @media screen and (min-width: $tablet) {
+        margin-left: 30px;
+        width: 294px
+    }
+    @media screen and (min-width: $tablet) {
+        width: 426px;
+    }
 }
