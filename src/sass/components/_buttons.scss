@@ -1,0 +1,30 @@
+%button {
+    width: 129px;
+    height: 44px;
+    border-radius: 5px;
+    color: $headerTextColor;
+    &:hover,
+    &:focus {
+        color: $accentColor;
+    }
+    @media screen and (min-width: 768px) {
+        width: 136px;
+    }
+}
+.btn-is-active {
+    @extend %button;
+    background-color: $accentColor;
+}
+.btn-not-active {
+    @extend %button;
+    background-color: rgba(255, 255, 255, 0);
+    border: 1px solid $headerTextColor;
+}
+
+%button + %button {
+    margin-left: 15px;
+}
+
+.buttons-container {
+    text-align: center; 
+}
