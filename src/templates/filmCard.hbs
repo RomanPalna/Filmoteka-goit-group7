@@ -3,8 +3,9 @@
     <a href="" class="card__link">
       <img src="https://image.tmdb.org/t/p/w400{{poster_path}}" alt="{{title}}" />
       <div class="card__meta">
-        <h2 class="card__title">{{ original_title }}</h2>
-        <p class="card__text">{{ genre_ids}} | {{release_date}}</p>
+        <h2 class="card__title">{{ original_title }}{{name}}</h2>
+        <p class="card__text">
+          {{#each genres}}{{name}} {{/each}} | {{release_date}}{{first_air_date}}</p>
       </div>
     </a>
   </article>
