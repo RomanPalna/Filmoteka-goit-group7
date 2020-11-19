@@ -8,15 +8,11 @@ const refs = {
 }
 
 const filmApi = new FilmApi();
-console.log(filmApi)
 
-filmApi.fetchFilms().then(movies => {
-  renderStartMarkup(movies);
+genresToFilms().then(r => {
+  renderStartMarkup(r);
+  console.log(r)
 });
-
-function createMenuMoviesMarkup (movies)  {
-  return movies.map(filmCardTpl).join('');
-}
 
 async function genresToFilms() {
   const [genres, films] = await Promise.all([
@@ -38,3 +34,8 @@ async function genresToFilms() {
 
 function renderStartMarkup(movies) {
   refs.galery.innerHTML = createMenuMoviesMarkup(movies);
+}
+
+function createMenuMoviesMarkup (movies)  {
+  return movies.map(filmCardTpl).join('');
+}
