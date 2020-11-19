@@ -1,9 +1,23 @@
-
 import './sass/main.css';
 import FilmApi from './js/film-api';
 import debounce from 'lodash.debounce';
 
 const filmApi = new FilmApi();
 
-filmApi.fetchFilms();
+(async function () {
+  const [genres, films] = await Promise.all([
+    filmApi.fetchGanres(),
+    filmApi.fetchFilms(),
+  ]);
+  const filmsWithGenres = films.results.map(film => {
+    const genresForFilm = genres.genres.filter(genre =>
+      film.genre_ids.includes(genre.id),
+    );
 
+    return {
+      ...film,
+      genres: genresForFilm,
+    };
+  });
+  console.log(filmsWithGenres);
+})();
