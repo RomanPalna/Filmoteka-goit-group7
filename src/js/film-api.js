@@ -32,7 +32,7 @@ export default class filmApi {
     const response = await fetch(url);
     const movies = await response.json();
 
-    return movies;
+    return movies.results;
   }
 
   incrementPage() {

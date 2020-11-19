@@ -1,8 +1,22 @@
 import './sass/main.css';
 import FilmApi from './js/film-api';
 import debounce from 'lodash.debounce';
+import filmCardTpl from './templates/filmCard.hbs'
+
+const refs = {
+  galery: document.querySelector('.js-galery')
+}
 
 const filmApi = new FilmApi();
+console.log(filmApi)
+
+filmApi.fetchFilms().then(movies => {
+  renderStartMarkup(movies);
+});
+
+function createMenuMoviesMarkup (movies)  {
+  return movies.map(filmCardTpl).join('');
+}
 
 async function genresToFilms() {
   const [genres, films] = await Promise.all([
@@ -13,7 +27,6 @@ async function genresToFilms() {
     const genresForFilm = genres.genres.filter(genre =>
       film.genre_ids.includes(genre.id),
     );
-
     return {
       ...film,
       genres: genresForFilm,
@@ -21,3 +34,7 @@ async function genresToFilms() {
   });
   return filmsWithGenres;
 }
+
+
+function renderStartMarkup(movies) {
+  refs.galery.innerHTML = createMenuMoviesMarkup(movies);
