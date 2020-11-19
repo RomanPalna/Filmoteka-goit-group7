@@ -321,6 +321,40 @@ summary {
   display: list-item;
 }
 
+.btn-is-active, .btn-not-active {
+  width: 129px;
+  height: 44px;
+  border-radius: 5px;
+  color: #ffffff;
+}
+
+.btn-is-active:hover, .btn-not-active:hover, .btn-is-active:focus, .btn-not-active:focus {
+  color: #ff6b08;
+}
+
+@media screen and (min-width: 768px) {
+  .btn-is-active, .btn-not-active {
+    width: 136px;
+  }
+}
+
+.btn-is-active {
+  background-color: #ff6b08;
+}
+
+.btn-not-active {
+  background-color: rgba(255, 255, 255, 0);
+  border: 1px solid #ffffff;
+}
+
+.btn-is-active + .btn-is-active, .btn-not-active + .btn-is-active, .btn-is-active + .btn-not-active, .btn-not-active + .btn-not-active {
+  margin-left: 15px;
+}
+
+.buttons-container {
+  text-align: center;
+}
+
 .header {
   display: block;
   padding-top: 45px;
@@ -333,7 +367,7 @@ summary {
   height: 230px;
   margin-left: auto;
   margin-right: auto;
-  background-color: black;
+  background-color: #000000;
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
@@ -380,7 +414,7 @@ summary {
 
 .header-link {
   display: inline-block;
-  color: white;
+  color: #ffffff;
   text-decoration: none;
   -webkit-box-align: end;
       -ms-flex-align: end;
@@ -396,12 +430,12 @@ summary {
   display: block;
   width: 100%;
   height: 3px;
-  background-color: #FF6B08;
+  background-color: #ff6b08;
   position: absolute;
 }
 
 .header-link:hover, .header-link:focus {
-  color: #FF6B08;
+  color: #ff6b08;
 }
 
 .header-link + .header-link {
@@ -454,7 +488,7 @@ summary {
     display: block;
     font-weight: 500;
     font-size: 30px;
-    color: white;
+    color: #ffffff;
     line-height: 35,16px;
   }
 }
@@ -502,36 +536,6 @@ summary {
   .error-msg {
     text-align: center;
   }
-}
-
-.btn-is-active, .btn-not-active {
-  width: 129px;
-  height: 44px;
-  border-radius: 5px;
-  color: white;
-}
-
-@media screen and (min-width: 768px) {
-  .btn-is-active, .btn-not-active {
-    width: 136px;
-  }
-}
-
-.btn-is-active {
-  background-color: #FF6B01;
-}
-
-.btn-not-active {
-  background-color: rgba(255, 255, 255, 0);
-  border: 1px solid white;
-}
-
-.btn-is-active + .btn-is-active, .btn-not-active + .btn-is-active, .btn-is-active + .btn-not-active, .btn-not-active + .btn-not-active {
-  margin-left: 15px;
-}
-
-.buttons-container {
-  text-align: center;
 }
 
 .section {
