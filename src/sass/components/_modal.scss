@@ -1,0 +1,94 @@
+// .backdrop {
+//     position: fixed;
+//     top: 0;
+//     left: 0;
+//     width: 100%;
+//     height: 100%;
+//     background-color: rgba(0, 0, 0, 0.2);
+//     opacity: 1;
+//     transition: opacity 250ms $animationTimingFunction, visibility 250ms $animationTimingFunction;
+//     z-index: 5;
+//     overflow-y: scroll;
+//     padding: 50px 30px;
+    
+// }
+
+.backdrop.is-hidden {
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transition: $animationTimingFunction;
+}
+.modal {
+    position: relative;
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0px 2px 1px rgba(0, 0, 0, 0.2), 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 1px 3px rgba(0, 0, 0, 0.12);
+    border-radius: 4px;
+    z-index: 1;
+    width: 100%;
+
+    @media screen and (max-width: $mobile) {
+      
+    }
+    @media screen and (min-width: $tablet)  {
+        // width: $tablet;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%) scale(1);
+    }
+
+    @media screen and (min-width: $desktop) {
+        // width: $desktop;
+    }
+}
+
+.modal-image {
+    border-radius: 5px;
+}
+
+.film-title-modal {
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 23px;
+}
+
+.film-info {
+    display: flex;
+}
+
+.data-film-titles {
+    display: inline-block;
+    width: 146px;
+}
+
+.dynamic-data {
+    display: inline-block;
+}
+
+.title-description {
+    color: $filmDescriptionColor;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 16px;
+}
+
+.dynamic-data-title {
+    color: $filmTitleColor;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 16px;
+}
+
+.film-about-title {
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 16px;
+}
+
+.film-about {
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 20px;
+}

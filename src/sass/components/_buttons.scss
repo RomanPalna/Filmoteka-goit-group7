@@ -1,0 +1,48 @@
+%button {
+    width: 129px;
+    height: 44px;
+    border-radius: 5px;
+    color: $headerTextColor;
+    &:hover,
+    &:focus {
+        color: $accentColor;
+    }
+    @media screen and (min-width: 768px) {
+        width: 136px;
+    }
+}
+.btn-is-active {
+    @extend %button;
+    background-color: $accentColor;
+}
+.btn-not-active {
+    @extend %button;
+    background-color: rgba(255, 255, 255, 0);
+    border: 1px solid $headerTextColor;
+}
+
+%button + %button {
+    margin-left: 15px;
+}
+
+.button-modal-is-active {
+    @extend %button;
+    font-size: 12px;
+    line-height: 16px;
+    width: 136px;
+    background-color: $accentColor;
+    color: $headerTextColor;
+}
+
+.button-modal {
+    @extend %button;
+    font-size: 12px;
+    line-height: 16px;
+    border: 1px solid $filmTitleColor;
+    color: $filmTitleColor;
+    width: 136px;
+}
+
+.buttons-container {
+    text-align: center; 
+}

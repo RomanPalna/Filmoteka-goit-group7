@@ -4,6 +4,7 @@ img {
   height: auto;
 }
 
+
 ul {
   list-style: none;
   padding: 0;
@@ -44,16 +45,17 @@ button {
   padding-right: 20px;
   margin-left: auto;
   margin-right: auto;
-
-  @media screen and (min-width: $mobile) {
-    width: $mobile;
-  }
+  width: $mobile;
 
   @media screen and (min-width: $tablet) {
+    padding-left: 70px;
+    padding-right: 70px;
     width: $tablet;
   }
 
   @media screen and (min-width: $desktop) {
+    padding-left: 70px;
+    padding-right: 70px;
     width: $desktop;
   }
 }
