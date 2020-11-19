@@ -4,7 +4,7 @@ import debounce from 'lodash.debounce';
 
 const filmApi = new FilmApi();
 
-(async function () {
+async function genresToFilms() {
   const [genres, films] = await Promise.all([
     filmApi.fetchGanres(),
     filmApi.fetchFilms(),
@@ -19,5 +19,5 @@ const filmApi = new FilmApi();
       genres: genresForFilm,
     };
   });
-  console.log(filmsWithGenres);
-})();
+  return filmsWithGenres;
+}
