@@ -42,11 +42,19 @@ function renderStartMarkup(movies) {
     (element, index, array) => {
         element.addEventListener('click', a)
     }
-  );  
+  );
+  console.log('huokygdf');  
 }
 
 function createMenuMoviesMarkup (movies)  {
   return movies.map(filmCardTpl).join('');
+  console.log('jjj');
+}
+
+function toggleModal() {
+  const modal = document.querySelector('[data-modal]');
+  document.body.classList.toggle('modal-open');
+  modal.classList.toggle('is-hidden');
 }
 
 

@@ -520,6 +520,8 @@ summary {
 }
 
 .search-input {
+  outline: black;
+  color: #8c8c8c;
   height: 20px;
   background-color: rgba(0, 0, 0, 0);
   border-top: 0;
@@ -735,6 +737,10 @@ summary {
   border-radius: 4px;
   z-index: 1;
   width: 100%;
+}
+
+.modal ::-webkit-scrollbar {
+  display: none;
 }
 
 @media screen and (max-width: 320px) {
