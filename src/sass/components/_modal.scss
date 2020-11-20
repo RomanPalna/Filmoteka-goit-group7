@@ -36,12 +36,8 @@
       
     }
     @media screen and (min-width: $tablet)  {
-<<<<<<< Updated upstream
-        // width: $tablet;
-=======
         max-width: $tablet;
         display: flex;
->>>>>>> Stashed changes
         position: absolute;
         top: 50%;
         left: 50%;
@@ -57,11 +53,8 @@
 
 .modal-image {
     border-radius: 5px;
-<<<<<<< Updated upstream
-=======
     margin-right: 30px;
     
->>>>>>> Stashed changes
 }
 
 .film-title-modal {
@@ -107,8 +100,6 @@
     font-weight: 500;
     font-size: 12px;
     line-height: 20px;
-<<<<<<< Updated upstream
-=======
     @media screen and (min-width: $tablet) {
         width: 294px
     }
@@ -163,5 +154,4 @@
     color: $filmDescriptionColor;
     justify-content: center;
     outline: transparent;
->>>>>>> Stashed changes
 }

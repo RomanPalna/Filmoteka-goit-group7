@@ -383,24 +383,6 @@ summary {
   text-align: center;
 }
 
-<<<<<<< Updated upstream
-.overlay {
-  height: 230px;
-  margin-left: auto;
-  margin-right: auto;
-  background-color: #000000;
-  background-position: center;
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-image: -webkit-gradient(linear, left top, right top, from(rgba(0, 0, 0, 0.56)), to(rgba(0, 0, 0, 0.56))), url("/images/header/header-mobile.jpg");
-  background-image: linear-gradient(to right, rgba(0, 0, 0, 0.56), rgba(0, 0, 0, 0.56)), url("/images/header/header-mobile.jpg");
-}
-
-@media screen and (min-device-pixel-ratio: 2), screen and (-webkit-min-device-pixel-ratio: 2), screen and (min-resolution: 192dpi), screen and (min-resolution: 2dppx) {
-  .overlay {
-    background-image: -webkit-gradient(linear, left top, right top, from(rgba(0, 0, 0, 0.56)), to(rgba(0, 0, 0, 0.56))), url("/images/header/header-mobile.jpg");
-    background-image: linear-gradient(to right, rgba(0, 0, 0, 0.56), rgba(0, 0, 0, 0.56)), url("/images/header/header-mobile.jpg");
-=======
 .button-group {
   display: none;
 }
@@ -422,67 +404,38 @@ summary {
   .library .header.overlay {
     background-image: -webkit-gradient(linear, left top, right top, from(rgba(0, 0, 0, 0.56)), to(rgba(0, 0, 0, 0.56))), url("/images/header/library-mobile.jpg");
     background-image: linear-gradient(to right, rgba(0, 0, 0, 0.56), rgba(0, 0, 0, 0.56)), url("/images/header/library-mobile.jpg");
->>>>>>> Stashed changes
   }
 }
 
 @media screen and (min-width: 768px) {
-<<<<<<< Updated upstream
-  .overlay {
-    max-width: 768px;
-    background-image: -webkit-gradient(linear, left top, right top, from(rgba(0, 0, 0, 0.56)), to(rgba(0, 0, 0, 0.56))), url("/images/header/header-tablet.jpg");
-    background-image: linear-gradient(to right, rgba(0, 0, 0, 0.56), rgba(0, 0, 0, 0.56)), url("/images/header/header-tablet.jpg");
-=======
   .library .header.overlay {
     background-image: -webkit-gradient(linear, left top, right top, from(rgba(0, 0, 0, 0.56)), to(rgba(0, 0, 0, 0.56))), url("/images/header/library-tablet.jpg");
     background-image: linear-gradient(to right, rgba(0, 0, 0, 0.56), rgba(0, 0, 0, 0.56)), url("/images/header/library-tablet.jpg");
->>>>>>> Stashed changes
   }
 }
 
 @media screen and (min-width: 768px) and (min-device-pixel-ratio: 2), screen and (min-width: 768px) and (-webkit-min-device-pixel-ratio: 2), screen and (min-width: 768px) and (min-resolution: 192dpi), screen and (min-width: 768px) and (min-resolution: 2dppx) {
-<<<<<<< Updated upstream
-  .overlay {
-    background-image: -webkit-gradient(linear, left top, right top, from(rgba(0, 0, 0, 0.56)), to(rgba(0, 0, 0, 0.56))), url("/images/header/header-tablet.jpg");
-    background-image: linear-gradient(to right, rgba(0, 0, 0, 0.56), rgba(0, 0, 0, 0.56)), url("/images/header/header-tablet.jpg");
-=======
   .library .header.overlay {
     background-image: -webkit-gradient(linear, left top, right top, from(rgba(0, 0, 0, 0.56)), to(rgba(0, 0, 0, 0.56))), url("/images/header/library-tablet.jpg");
     background-image: linear-gradient(to right, rgba(0, 0, 0, 0.56), rgba(0, 0, 0, 0.56)), url("/images/header/library-tablet.jpg");
->>>>>>> Stashed changes
   }
 }
 
 @media screen and (min-width: 1024px) {
-<<<<<<< Updated upstream
-  .overlay {
-    max-width: 1600px;
-    background-image: -webkit-gradient(linear, left top, right top, from(rgba(0, 0, 0, 0.56)), to(rgba(0, 0, 0, 0.56))), url("/images/header/header-desktop.jpg");
-    background-image: linear-gradient(to right, rgba(0, 0, 0, 0.56), rgba(0, 0, 0, 0.56)), url("/images/header/header-desktop.jpg");
-=======
   .library .header.overlay {
     background-image: -webkit-gradient(linear, left top, right top, from(rgba(0, 0, 0, 0.56)), to(rgba(0, 0, 0, 0.56))), url("/images/header/library-desktop.jpg");
     background-image: linear-gradient(to right, rgba(0, 0, 0, 0.56), rgba(0, 0, 0, 0.56)), url("/images/header/library-desktop.jpg");
->>>>>>> Stashed changes
   }
 }
 
 @media screen and (min-width: 1024px) and (min-device-pixel-ratio: 2), screen and (min-width: 1024px) and (-webkit-min-device-pixel-ratio: 2), screen and (min-width: 1024px) and (min-resolution: 192dpi), screen and (min-width: 1024px) and (min-resolution: 2dppx) {
-<<<<<<< Updated upstream
-  .overlay {
-    background-image: -webkit-gradient(linear, left top, right top, from(rgba(0, 0, 0, 0.56)), to(rgba(0, 0, 0, 0.56))), url("/images/header/header-desktop.jpg");
-    background-image: linear-gradient(to right, rgba(0, 0, 0, 0.56), rgba(0, 0, 0, 0.56)), url("/images/header/header-desktop.jpg");
-  }
-}
-
-=======
   .library .header.overlay {
     background-image: -webkit-gradient(linear, left top, right top, from(rgba(0, 0, 0, 0.56)), to(rgba(0, 0, 0, 0.56))), url("/images/header/library-desktop.jpg");
     background-image: linear-gradient(to right, rgba(0, 0, 0, 0.56), rgba(0, 0, 0, 0.56)), url("/images/header/library-desktop.jpg");
   }
 }
 
-.header.overlay {
+.overlay {
   height: 230px;
   margin-left: auto;
   margin-right: auto;
@@ -495,14 +448,14 @@ summary {
 }
 
 @media screen and (min-device-pixel-ratio: 2), screen and (-webkit-min-device-pixel-ratio: 2), screen and (min-resolution: 192dpi), screen and (min-resolution: 2dppx) {
-  .header.overlay {
+  .overlay {
     background-image: -webkit-gradient(linear, left top, right top, from(rgba(0, 0, 0, 0.56)), to(rgba(0, 0, 0, 0.56))), url("/images/header/header-mobile.jpg");
     background-image: linear-gradient(to right, rgba(0, 0, 0, 0.56), rgba(0, 0, 0, 0.56)), url("/images/header/header-mobile.jpg");
   }
 }
 
 @media screen and (min-width: 768px) {
-  .header.overlay {
+  .overlay {
     max-width: 768px;
     background-image: -webkit-gradient(linear, left top, right top, from(rgba(0, 0, 0, 0.56)), to(rgba(0, 0, 0, 0.56))), url("/images/header/header-tablet.jpg");
     background-image: linear-gradient(to right, rgba(0, 0, 0, 0.56), rgba(0, 0, 0, 0.56)), url("/images/header/header-tablet.jpg");
@@ -510,14 +463,14 @@ summary {
 }
 
 @media screen and (min-width: 768px) and (min-device-pixel-ratio: 2), screen and (min-width: 768px) and (-webkit-min-device-pixel-ratio: 2), screen and (min-width: 768px) and (min-resolution: 192dpi), screen and (min-width: 768px) and (min-resolution: 2dppx) {
-  .header.overlay {
+  .overlay {
     background-image: -webkit-gradient(linear, left top, right top, from(rgba(0, 0, 0, 0.56)), to(rgba(0, 0, 0, 0.56))), url("/images/header/header-tablet.jpg");
     background-image: linear-gradient(to right, rgba(0, 0, 0, 0.56), rgba(0, 0, 0, 0.56)), url("/images/header/header-tablet.jpg");
   }
 }
 
 @media screen and (min-width: 1024px) {
-  .header.overlay {
+  .overlay {
     max-width: 1600px;
     background-image: -webkit-gradient(linear, left top, right top, from(rgba(0, 0, 0, 0.56)), to(rgba(0, 0, 0, 0.56))), url("/images/header/header-desktop.jpg");
     background-image: linear-gradient(to right, rgba(0, 0, 0, 0.56), rgba(0, 0, 0, 0.56)), url("/images/header/header-desktop.jpg");
@@ -525,13 +478,12 @@ summary {
 }
 
 @media screen and (min-width: 1024px) and (min-device-pixel-ratio: 2), screen and (min-width: 1024px) and (-webkit-min-device-pixel-ratio: 2), screen and (min-width: 1024px) and (min-resolution: 192dpi), screen and (min-width: 1024px) and (min-resolution: 2dppx) {
-  .header.overlay {
+  .overlay {
     background-image: -webkit-gradient(linear, left top, right top, from(rgba(0, 0, 0, 0.56)), to(rgba(0, 0, 0, 0.56))), url("/images/header/header-desktop.jpg");
     background-image: linear-gradient(to right, rgba(0, 0, 0, 0.56), rgba(0, 0, 0, 0.56)), url("/images/header/header-desktop.jpg");
   }
 }
 
->>>>>>> Stashed changes
 .header-link {
   display: inline-block;
   color: #ffffff;
@@ -847,13 +799,10 @@ summary {
 
 @media screen and (min-width: 768px) {
   .modal {
-<<<<<<< Updated upstream
-=======
     max-width: 768px;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
->>>>>>> Stashed changes
     position: absolute;
     top: 50%;
     left: 50%;
@@ -921,8 +870,6 @@ summary {
   font-size: 12px;
   line-height: 20px;
 }
-<<<<<<< Updated upstream
-=======
 
 @media screen and (min-width: 768px) {
   .film-about {
@@ -987,5 +934,4 @@ summary {
           justify-content: center;
   outline: transparent;
 }
->>>>>>> Stashed changes
 /*# sourceMappingURL=main.css.map */
