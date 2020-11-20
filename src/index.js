@@ -1,8 +1,9 @@
 import './sass/main.css';
 import FilmApi from './js/film-api';
 import debounce from 'lodash.debounce';
-import filmCardTpl from './templates/filmCard.hbs'
+import filmCardTpl from './templates/filmCard.hbs';
 import './js/modal.js';
+import modalTpl from './templates/modal.hbs';
 
 const refs = {
   galery: document.querySelector('.js-galery'),
@@ -35,11 +36,13 @@ async function genresToFilms() {
 
 
 function renderStartMarkup(movies) {
-  refs.galery.innerHTML = createMenuMoviesMarkup(movies);
-  let openModal = document.querySelector('.card__link');
-  let closeModalBtn = document.querySelector('[data-modal-close]');
-  openModal.addEventListener('click', toggleModal);
-  closeModalBtn.addEventListener('click', toggleModal);
+  refs.galery.innerHTML = createMenuMoviesMarkup(movies);  
+  
+  [...document.getElementsByClassName("card__link")].forEach(
+    (element, index, array) => {
+        element.addEventListener('click', a)
+    }
+  );  
 }
 
 function createMenuMoviesMarkup (movies)  {
@@ -47,14 +50,16 @@ function createMenuMoviesMarkup (movies)  {
 }
 
 
-function toggleModal(e) {
-  // alert();
-  console.log('click');
+function a(e) {
   e.preventDefault();
-  let modal = document.querySelector('[data-modal]')
-
-  document.body.classList.toggle('modal-open')
-  modal.classList.toggle('is-hidden');
-  return false;
-
+  let idFilm = e.currentTarget.getAttribute("data-id");
+    filmApi.fetchFilm(idFilm).then(function (movie) {
+      const modalContainer = document.querySelector('.modal-container');
+      
+      const card = modalTpl(movie);
+      modalContainer.innerHTML = card;
+      let closeModalBtn = document.querySelector('[data-modal-close]');
+      closeModalBtn.addEventListener('click', toggleModal);
+      toggleModal(movie)
+    })
 }
