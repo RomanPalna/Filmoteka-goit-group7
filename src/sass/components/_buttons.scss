@@ -22,14 +22,14 @@
 }
 
 %button + %button {
-    margin-left: 15px;
+    margin-left: 13px;
 }
 
 .button-modal-is-active {
     @extend %button;
     font-size: 12px;
     line-height: 16px;
-    width: 136px;
+    max-width: 134px;
     background-color: $accentColor;
     color: $headerTextColor;
 }
@@ -40,7 +40,7 @@
     line-height: 16px;
     border: 1px solid $filmTitleColor;
     color: $filmTitleColor;
-    width: 136px;
+    max-width: 134px;
 }
 
 .buttons-container {
