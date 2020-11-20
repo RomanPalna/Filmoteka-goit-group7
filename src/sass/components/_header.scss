@@ -6,7 +6,75 @@
     height: 230px;
     text-align: center;
 } 
+
+.button-group {
+    display: none;
+}
+
+
  
+<<<<<<< Updated upstream
+=======
+.library {
+    
+    .form-group {
+        display: none;
+    }
+    .button-group {
+        display: block;
+
+    }
+    .header.overlay {
+        background-image: linear-gradient(
+            to right,
+            rgba(0, 0, 0, 0.56),
+            rgba(0, 0, 0, 0.56)), 
+             url('/images/header/library-mobile.jpg');
+             @media screen and (min-device-pixel-ratio: 2),
+                    screen and (min-resolution: 192dpi),
+                    screen and (min-resolution: 2dppx) {
+                    background-image: linear-gradient(
+                        to right,
+                        rgba(0, 0, 0, 0.56),
+                        rgba(0, 0, 0, 0.56)),
+                        url('/images/header/library-mobile.jpg');
+                    }
+                    
+         
+    
+            @media screen and (min-width: 768px) {
+                background-image: linear-gradient(
+                    to right,
+                    rgba(0, 0, 0, 0.56),
+                    rgba(0, 0, 0, 0.56)),
+                        url('/images/header/library-tablet.jpg');
+                        @media screen and (min-device-pixel-ratio: 2),
+                            screen and (min-resolution: 192dpi),
+                            screen and (min-resolution: 2dppx) {
+                            background-image: linear-gradient(to right,
+                            rgba(0, 0, 0, 0.56),
+                            rgba(0, 0, 0, 0.56)),
+                                url('/images/header/library-tablet.jpg');
+                            }
+            }
+    
+            @media screen and (min-width:1024px) {
+                background-image: linear-gradient(to right,
+                       rgba(0, 0, 0, 0.56),
+                       rgba(0, 0, 0, 0.56)),
+                        url('/images/header/library-desktop.jpg');
+                        @media screen and (min-device-pixel-ratio: 2),
+                            screen and (min-resolution: 192dpi),
+                            screen and (min-resolution: 2dppx) {
+                                background-image: linear-gradient(to right,
+                                rgba(0, 0, 0, 0.56),
+                                rgba(0, 0, 0, 0.56)),
+                                url('/images/header/library-desktop.jpg');
+                            }
+            }
+    } 
+}
+>>>>>>> Stashed changes
 
 
 .overlay {
@@ -70,6 +138,10 @@
         }
 }
 
+<<<<<<< Updated upstream
+=======
+
+>>>>>>> Stashed changes
 .header-link { 
     display: inline-block;
     color: $headerTextColor;
@@ -81,7 +153,7 @@
     position: relative;
 
 
-    &.active::after {
+    &.home-now::after {
         content: "";
         display: block;
         width: 100%;
@@ -96,6 +168,25 @@
     }
 
 }
+
+.library {
+    .home-now::after {
+        display: none;
+    }
+}
+
+.library .library-now::after {
+    content: "";
+    display: block;
+    width: 100%;
+    height: 3px;
+    background-color: $accentColor;
+
+    position: absolute;
+    }
+ 
+
+
 
 .header-link + .header-link {
     margin-left: 39px;
