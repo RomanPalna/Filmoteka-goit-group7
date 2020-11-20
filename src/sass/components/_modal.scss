@@ -24,6 +24,9 @@
 
 
 .modal {
+    ::-webkit-scrollbar {
+        display: none;
+    }
     left: auto;
     right: auto;
     overflow-y: scroll;
