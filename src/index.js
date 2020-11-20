@@ -2,9 +2,11 @@ import './sass/main.css';
 import FilmApi from './js/film-api';
 import debounce from 'lodash.debounce';
 import filmCardTpl from './templates/filmCard.hbs'
+import './js/modal.js';
 
 const refs = {
-  galery: document.querySelector('.js-galery')
+  galery: document.querySelector('.js-galery'),
+  
 }
 
 const filmApi = new FilmApi();
@@ -34,8 +36,25 @@ async function genresToFilms() {
 
 function renderStartMarkup(movies) {
   refs.galery.innerHTML = createMenuMoviesMarkup(movies);
+  let openModal = document.querySelector('.card__link');
+  let closeModalBtn = document.querySelector('[data-modal-close]');
+  openModal.addEventListener('click', toggleModal);
+  closeModalBtn.addEventListener('click', toggleModal);
 }
 
 function createMenuMoviesMarkup (movies)  {
   return movies.map(filmCardTpl).join('');
+}
+
+
+function toggleModal(e) {
+  // alert();
+  console.log('click');
+  e.preventDefault();
+  let modal = document.querySelector('[data-modal]')
+
+  document.body.classList.toggle('modal-open')
+  modal.classList.toggle('is-hidden');
+  return false;
+
 }
