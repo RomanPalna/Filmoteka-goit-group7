@@ -63,7 +63,7 @@
                         }
         }
 
-        .library  {
+        .library & {
             background-image: linear-gradient(
         to right,
         rgba(0, 0, 0, 0.56),
@@ -113,6 +113,19 @@
 }
 
 .header-link { 
+    .home-now::after {
+        display: none;
+    }
+    .library-now::after {
+
+        content: "";
+        display: block;
+        width: 100%;
+        height: 3px;
+        background-color: $accentColor;
+        position: absolute;
+
+    }
     display: inline-block;
     color: $headerTextColor;
     text-decoration: none;
@@ -124,6 +137,9 @@
 
 
     &.home-now::after {
+        .library & {
+            display: none;
+        }
         content: "";
         display: block;
         width: 100%;
@@ -214,11 +230,14 @@
     @media screen and (min-width: 768px) {
         text-align: center;
     }
+    .library & {
+        display: none;
+    }
 }
 
-.header .button-group {
+.button-group {
     display: none;
-    .library .button-group {
+    .library & {
         display: block;
     }
 }
