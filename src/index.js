@@ -9,6 +9,12 @@ const filmApi = new FilmApi();
 
 const refs = {
   galery: document.querySelector('.js-galery'),
+
+  modal: document.querySelector('[data-modal]'),
+  body: document.querySelector('body'),
+
+
+
   inputSearch: document.querySelector('.form-group'),
   watchBtn: document.querySelector('.js-button-watched'),
   queueBtn: document.querySelector('.js-button-queue'),
@@ -18,6 +24,7 @@ const refs = {
 
 genresToFilms().then(r => {
   renderStartMarkup(r);
+
 });
 
 async function genresToFilms() {
@@ -45,6 +52,7 @@ function renderStartMarkup(movies) {
       element.addEventListener('click', a);
     },
   );
+
 }
 
 function createMenuMoviesMarkup(movies) {
@@ -52,10 +60,31 @@ function createMenuMoviesMarkup(movies) {
 }
 
 function toggleModal() {
-  const modal = document.querySelector('[data-modal]');
   document.body.classList.toggle('modal-open');
-  modal.classList.toggle('is-hidden');
+  refs.modal.classList.toggle('is-hidden');
+  document.addEventListener('keydown', onCloseModalByEsc);
 }
+
+function onCloseModal(event) {
+  refs.modal.classList.toggle('is-hidden');
+  document.removeEventListener('keydown', onCloseModalByEsc);
+}
+
+function onCloseModalByEsc(event) {
+  if (event.code === 'Escape') {
+    onCloseModal();
+  }
+}
+
+refs.modal.addEventListener('click', onOutModalClick);
+function onOutModalClick(evt) {
+  if (evt.currentTarget === evt.target) {
+    onCloseModal();
+  }
+}
+
+
+
 
 function a(e) {
   e.preventDefault();
@@ -70,6 +99,7 @@ function a(e) {
     closeModalBtn.addEventListener('click', toggleModal);
     toggleModal(movie);
   });
+
 }
 
 //films search
@@ -84,6 +114,7 @@ function onSearch(event) {
   event.preventDefault();
   refs.filmSearchMarkup.innerHTML = '';
   fetchingSerchFilms();
+
 }
 
 function fetchingSerchFilms() {
