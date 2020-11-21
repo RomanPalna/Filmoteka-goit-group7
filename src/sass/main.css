@@ -611,6 +611,10 @@ summary {
   top: 4px;
 }
 
+.library .search-icon {
+  display: none;
+}
+
 @media screen and (max-width: 767px) {
   .search-icon {
     right: 1px;
