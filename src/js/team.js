@@ -2,7 +2,7 @@ export default [
   {
     name: 'Roman',
     surname: 'Palna',
-    photo: './images/teammate-roman.png',
+    photo: '../images/teammare-darya.jpg',
     position: ['Team Leader', 'Frontend Developer'],
     githubLink: 'https://github.com/RomanPalna',
   },
