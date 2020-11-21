@@ -2,7 +2,6 @@ import './sass/main.css';
 import FilmApi from './js/film-api';
 import debounce from 'lodash.debounce';
 import filmCardTpl from './templates/filmCard.hbs';
-import './js/modal.js';
 import modalTpl from './templates/modal.hbs';
 
 const filmApi = new FilmApi();
