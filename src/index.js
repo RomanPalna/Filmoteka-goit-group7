@@ -8,7 +8,10 @@ import modalTpl from './templates/modal.hbs';
 const refs = {
   galery: document.querySelector('.js-galery'),
   inputSearch: document.querySelector('.form-group'),
-  filmSearchMarkup: document.querySelector('.search-films'),
+  watchBtn: document.querySelector('.js-button-watched'),
+  queueBtn: document.querySelector('.js-button-queue'),
+  addWatchBtn: document.querySelector('.add-to-watched-js'),
+  addQueueBtn: document.querySelector('.add-to-queue-js'),
 };
 
 const filmApi = new FilmApi();
@@ -62,6 +65,7 @@ function a(e) {
 
     const card = modalTpl(movie);
     modalContainer.innerHTML = card;
+
     let closeModalBtn = document.querySelector('[data-modal-close]');
     closeModalBtn.addEventListener('click', toggleModal);
     toggleModal(movie);
@@ -89,4 +93,22 @@ function fetchingSerchFilms() {
     .fetchSearch(searchQuery)
     .then(data => data.results)
     .then(renderStartMarkup);
+}
+
+// Local Storage
+const WATCHED_FILMS = watched;
+
+console.log(localStorage);
+
+function watchedFilms() {
+  const watch = filmApi.fetchFilm;
+
+  localStorage.setItem(WATCHED_FILMS, watch);
+}
+
+function watchedFilmsFromLS() {
+  const savedWatchedFilms = localStorage.getItem(WATCHED_FILMS);
+
+  if (savedWatchedFilms) {
+  }
 }
