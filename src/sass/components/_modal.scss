@@ -39,7 +39,7 @@
     width: 100%;
 
     @media screen and (max-width: $mobile) {
-        max-width: $mobile;
+        max-width: 400px;
     }
 
     @media screen and (min-width: $tablet)  {
@@ -158,6 +158,14 @@
     margin-top: 11px;
 }
 
+.film-descr-container {
+    @media screen and (max-width: 767px) {
+    margin-right: auto;
+    margin-left: auto;
+    max-width: 400px;
+    }
+}
+
 .film-info-container {
     
     width: 280px;
@@ -180,9 +188,10 @@
     background-color: $headerTextColor;
     top: 3px;
     right: 7px;
-    border: tra;
+    border: transparent;
     color: $filmDescriptionColor;
     justify-content: center;
     outline: transparent;
 
 }
+
