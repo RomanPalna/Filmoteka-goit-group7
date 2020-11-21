@@ -333,7 +333,8 @@ summary {
 }
 
 .btn-is-active:hover, .btn-not-active:hover, .button-modal-is-active:hover, .button-modal:hover, .btn-is-active:focus, .btn-not-active:focus, .button-modal-is-active:focus, .button-modal:focus {
-  color: #ff6b08;
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
 }
 
 @media screen and (min-width: 768px) {
@@ -358,7 +359,7 @@ summary {
 .button-modal-is-active {
   font-size: 12px;
   line-height: 16px;
-  max-width: 134px;
+  min-width: 105px;
   background-color: #ff6b08;
   color: #ffffff;
 }
@@ -368,11 +369,21 @@ summary {
   line-height: 16px;
   border: 1px solid #000000;
   color: #000000;
-  max-width: 134px;
+  min-width: 105px;
 }
 
-.buttons-container {
-  text-align: center;
+.button-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+@media screen and (max-width: 767px) {
+  .button-container {
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
 }
 
 .header {
@@ -432,6 +443,48 @@ summary {
   }
 }
 
+.overlay .library {
+  background-image: -webkit-gradient(linear, left top, right top, from(rgba(0, 0, 0, 0.56)), to(rgba(0, 0, 0, 0.56))), url("/images/header/library-mobile.jpg");
+  background-image: linear-gradient(to right, rgba(0, 0, 0, 0.56), rgba(0, 0, 0, 0.56)), url("/images/header/library-mobile.jpg");
+}
+
+@media screen and (min-device-pixel-ratio: 2), screen and (-webkit-min-device-pixel-ratio: 2), screen and (min-resolution: 192dpi), screen and (min-resolution: 2dppx) {
+  .overlay .library {
+    background-image: -webkit-gradient(linear, left top, right top, from(rgba(0, 0, 0, 0.56)), to(rgba(0, 0, 0, 0.56))), url("/images/header/library-mobile.jpg");
+    background-image: linear-gradient(to right, rgba(0, 0, 0, 0.56), rgba(0, 0, 0, 0.56)), url("/images/header/library-mobile.jpg");
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .overlay .library {
+    max-width: 768px;
+    background-image: -webkit-gradient(linear, left top, right top, from(rgba(0, 0, 0, 0.56)), to(rgba(0, 0, 0, 0.56))), url("/images/header/library-tablet.jpg");
+    background-image: linear-gradient(to right, rgba(0, 0, 0, 0.56), rgba(0, 0, 0, 0.56)), url("/images/header/library-tablet.jpg");
+  }
+}
+
+@media screen and (min-width: 768px) and (min-device-pixel-ratio: 2), screen and (min-width: 768px) and (-webkit-min-device-pixel-ratio: 2), screen and (min-width: 768px) and (min-resolution: 192dpi), screen and (min-width: 768px) and (min-resolution: 2dppx) {
+  .overlay .library {
+    background-image: -webkit-gradient(linear, left top, right top, from(rgba(0, 0, 0, 0.56)), to(rgba(0, 0, 0, 0.56))), url("/images/header/library-tablet.jpg");
+    background-image: linear-gradient(to right, rgba(0, 0, 0, 0.56), rgba(0, 0, 0, 0.56)), url("/images/header/library-tablet.jpg");
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .overlay .library {
+    max-width: 1600px;
+    background-image: -webkit-gradient(linear, left top, right top, from(rgba(0, 0, 0, 0.56)), to(rgba(0, 0, 0, 0.56))), url("/images/header/library-desktop.jpg");
+    background-image: linear-gradient(to right, rgba(0, 0, 0, 0.56), rgba(0, 0, 0, 0.56)), url("/images/header/library-desktop.jpg");
+  }
+}
+
+@media screen and (min-width: 1024px) and (min-device-pixel-ratio: 2), screen and (min-width: 1024px) and (-webkit-min-device-pixel-ratio: 2), screen and (min-width: 1024px) and (min-resolution: 192dpi), screen and (min-width: 1024px) and (min-resolution: 2dppx) {
+  .overlay .library {
+    background-image: -webkit-gradient(linear, left top, right top, from(rgba(0, 0, 0, 0.56)), to(rgba(0, 0, 0, 0.56))), url("/images/header/library-desktop.jpg");
+    background-image: linear-gradient(to right, rgba(0, 0, 0, 0.56), rgba(0, 0, 0, 0.56)), url("/images/header/library-desktop.jpg");
+  }
+}
+
 .header-link {
   display: inline-block;
   color: #ffffff;
@@ -445,7 +498,7 @@ summary {
   position: relative;
 }
 
-.header-link.active::after {
+.header-link.home-now::after {
   content: "";
   display: block;
   width: 100%;
@@ -486,10 +539,6 @@ summary {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-}
-
-.logo-icon {
-  background-color: beige;
 }
 
 @media screen and (min-width: 768px) {
@@ -558,6 +607,14 @@ summary {
   .error-msg {
     text-align: center;
   }
+}
+
+.header .button-group {
+  display: none;
+}
+
+.header .button-group .library .button-group {
+  display: block;
 }
 
 .section {
@@ -745,7 +802,7 @@ summary {
 
 @media screen and (max-width: 320px) {
   .modal {
-    max-width: 320px;
+    max-width: 400px;
   }
 }
 
@@ -869,6 +926,14 @@ summary {
   margin-top: 11px;
 }
 
+@media screen and (max-width: 767px) {
+  .film-descr-container {
+    margin-right: auto;
+    margin-left: auto;
+    max-width: 400px;
+  }
+}
+
 .film-info-container {
   width: 280px;
 }
@@ -897,7 +962,7 @@ summary {
   background-color: #ffffff;
   top: 3px;
   right: 7px;
-  border: tra;
+  border: transparent;
   color: #8c8c8c;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
