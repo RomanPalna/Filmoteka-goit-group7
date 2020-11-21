@@ -199,6 +199,9 @@
 }
 
 .search-input {
+    .library & {
+        display: none;
+    }
     outline: black;
     color: $filmDescriptionColor;
     height: 20px;
