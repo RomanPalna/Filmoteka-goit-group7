@@ -103,17 +103,17 @@ console.log(localStorage);
 refs.addWatchBtn.addEventListener('click', watchedFilms);
 
 function watchedFilms() {
-  console.log('click');
-  const watch = filmApi
-    .fetchFilm()
-    .then(localStorage.setItem(WATCHED_FILMS, JSON.stringify(watch)));
+  console.log('Register click');
+  // const watch = filmApi
+  //   .fetchFilm()
+  //   .then(localStorage.setItem(WATCHED_FILMS, JSON.stringify(watch)));
 
   // localStorage.setItem(WATCHED_FILMS, JSON.stringify(watch));
 }
 
-function watchedFilmsFromLocalStorage() {
-  const savedWatchedFilms = localStorage.getItem(WATCHED_FILMS);
+// function watchedFilmsFromLocalStorage() {
+//   const savedWatchedFilms = localStorage.getItem(WATCHED_FILMS);
 
-  if (savedWatchedFilms) {
-  }
-}
+//   if (savedWatchedFilms) {
+//   }
+// }
