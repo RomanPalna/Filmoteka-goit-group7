@@ -919,4 +919,167 @@ summary {
     width: 426px;
   }
 }
+
+.team-modal {
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+:root {
+  --timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  --animation-duration: 250ms;
+}
+
+.lightbox {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  width: 100vw;
+  height: 100vh;
+  opacity: 0;
+  pointer-events: none;
+  -webkit-transition: opacity var(--animation-duration) var(--timing-function);
+  transition: opacity var(--animation-duration) var(--timing-function);
+  overflow: auto;
+  z-index: 999;
+}
+
+.lightbox.is-open {
+  opacity: 1;
+  pointer-events: initial;
+}
+
+.lightbox__overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 290%;
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+.lightbox__content {
+  margin: 0 auto;
+  position: relative;
+  padding: 30px;
+  border-radius: 10px;
+  background-color: #fff;
+  -webkit-transition: -webkit-transform var(--animation-duration) var(--timing-function);
+  transition: -webkit-transform var(--animation-duration) var(--timing-function);
+  transition: transform var(--animation-duration) var(--timing-function);
+  transition: transform var(--animation-duration) var(--timing-function), -webkit-transform var(--animation-duration) var(--timing-function);
+  max-width: 768px;
+  top: 3%;
+}
+
+.team-title {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.team-title::after {
+  content: '';
+  display: block;
+  max-width: 80%;
+  height: 4px;
+  background-color: #b40000;
+  margin: 0 auto;
+  margin-top: 5px;
+}
+
+.team-title__img {
+  margin: 0 auto;
+}
+
+.team-list {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  padding-top: 40px;
+  max-width: 728px;
+  margin: 0 auto;
+}
+
+.team-item {
+  width: 200px;
+  margin-bottom: 30px;
+}
+
+.team-item__img {
+  border-radius: 50%;
+  margin-bottom: 10px;
+  -webkit-transition: -webkit-transform 0.3s linear;
+  transition: -webkit-transform 0.3s linear;
+  transition: transform 0.3s linear;
+  transition: transform 0.3s linear, -webkit-transform 0.3s linear;
+}
+
+.team-item__img:hover {
+  -webkit-transform: scale(1.05);
+          transform: scale(1.05);
+}
+
+.team-item__name-block {
+  font-size: 20px;
+  text-align: center;
+  margin-bottom: 5px;
+  font-weight: 500;
+}
+
+.team-item__position {
+  text-align: center;
+}
+
+.lightbox__button {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  width: 30px;
+  height: 30px;
+  padding: 0;
+  margin: 0;
+  border: none;
+  border-radius: 50%;
+  background-color: transparent;
+  color: #fff;
+  cursor: pointer;
+  -webkit-transition: background-color var(--animation-duration) var(--timing-function);
+  transition: background-color var(--animation-duration) var(--timing-function);
+  outline: none;
+  background-image: url("../images/close_icon.png");
+  background-position: center;
+  background-size: 60%;
+  background-repeat: no-repeat;
+  -webkit-transition: -webkit-transform 0.3s linear;
+  transition: -webkit-transform 0.3s linear;
+  transition: transform 0.3s linear;
+  transition: transform 0.3s linear, -webkit-transform 0.3s linear;
+}
+
+.lightbox__button:hover,
+.lightbox__button:focus {
+  background-color: rgba(0, 0, 0, 0.1);
+  -webkit-transform: rotate(90deg) scale(1.1);
+          transform: rotate(90deg) scale(1.1);
+}
 /*# sourceMappingURL=main.css.map */

@@ -1,7 +1,8 @@
 import './sass/main.css';
 import FilmApi from './js/film-api';
 import debounce from 'lodash.debounce';
-import filmCardTpl from './templates/filmCard.hbs'
+import filmCardTpl from './templates/filmCard.hbs';
+import './js/team-modal.js'
 
 const refs = {
   galery: document.querySelector('.js-galery')
