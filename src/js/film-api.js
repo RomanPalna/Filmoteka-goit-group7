@@ -1,11 +1,13 @@
 const BASE_URL = 'https://api.themoviedb.org/3/trending/all/week';
 const GANRE_URL = 'https://api.themoviedb.org/3/genre/movie/list';
 const API_KEY = '212da8d7e84ef8a0df2f733afbf10d5d';
-const DOMAIN = 'https://api.themoviedb.org'
+const DOMAIN = 'https://api.themoviedb.org';
+const SEARCH_URL = 'https://api.themoviedb.org/3/search/movie';
 
 export default class filmApi {
   constructor() {
     this.page = 1;
+    this.searchQuery = '';
   }
 
   async fetchGanres() {
@@ -30,8 +32,6 @@ export default class filmApi {
 
   async fetchFilms() {
     const searchParams = new URLSearchParams({
-      media_type: 'all',
-      time_window: 'week',
       page: this.page,
       api_key: API_KEY,
     });
@@ -42,6 +42,22 @@ export default class filmApi {
     const movies = await response.json();
 
     return movies;
+  }
+
+  async fetchSearch() {
+    const searchParams = new URLSearchParams({
+      api_key: API_KEY,
+      language: en - US,
+      query: this.searchQuery,
+      include_adult: false,
+    });
+
+    const url = `${BASE_URL}?${searchParams}`;
+
+    const response = await fetch(url);
+    const searchingFilm = await response.json();
+
+    return searchingFilm;
   }
 
   incrementPage() {

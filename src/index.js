@@ -7,14 +7,13 @@ import modalTpl from './templates/modal.hbs';
 
 const refs = {
   galery: document.querySelector('.js-galery'),
-  
-}
+};
 
 const filmApi = new FilmApi();
 
 genresToFilms().then(r => {
   renderStartMarkup(r);
-  console.log(r)
+  console.log(r);
 });
 
 async function genresToFilms() {
@@ -34,19 +33,18 @@ async function genresToFilms() {
   return filmsWithGenres;
 }
 
-
 function renderStartMarkup(movies) {
-  refs.galery.innerHTML = createMenuMoviesMarkup(movies);  
-  
-  [...document.getElementsByClassName("card__link")].forEach(
+  refs.galery.innerHTML = createMenuMoviesMarkup(movies);
+
+  [...document.getElementsByClassName('card__link')].forEach(
     (element, index, array) => {
-        element.addEventListener('click', a)
-    }
+      element.addEventListener('click', a);
+    },
   );
-  console.log('huokygdf');  
+  console.log('huokygdf');
 }
 
-function createMenuMoviesMarkup (movies)  {
+function createMenuMoviesMarkup(movies) {
   return movies.map(filmCardTpl).join('');
   console.log('jjj');
 }
@@ -57,17 +55,18 @@ function toggleModal() {
   modal.classList.toggle('is-hidden');
 }
 
-
 function a(e) {
   e.preventDefault();
-  let idFilm = e.currentTarget.getAttribute("data-id");
-    filmApi.fetchFilm(idFilm).then(function (movie) {
-      const modalContainer = document.querySelector('.modal-container');
-      
-      const card = modalTpl(movie);
-      modalContainer.innerHTML = card;
-      let closeModalBtn = document.querySelector('[data-modal-close]');
-      closeModalBtn.addEventListener('click', toggleModal);
-      toggleModal(movie)
-    })
+  let idFilm = e.currentTarget.getAttribute('data-id');
+  filmApi.fetchFilm(idFilm).then(function (movie) {
+    const modalContainer = document.querySelector('.modal-container');
+
+    const card = modalTpl(movie);
+    modalContainer.innerHTML = card;
+    let closeModalBtn = document.querySelector('[data-modal-close]');
+    closeModalBtn.addEventListener('click', toggleModal);
+    toggleModal(movie);
+  });
 }
+
+console.log(filmApi.fetchSearch);
