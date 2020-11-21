@@ -485,6 +485,19 @@ summary {
   }
 }
 
+.library .library-now::after {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 3px;
+  background-color: #ff6b08;
+  position: absolute;
+}
+
+.library .header-link.home-now::after {
+  display: none;
+}
+
 .header-link {
   display: inline-block;
   color: #ffffff;
@@ -498,19 +511,6 @@ summary {
   position: relative;
 }
 
-.header-link .home-now::after {
-  display: none;
-}
-
-.header-link .library-now::after {
-  content: "";
-  display: block;
-  width: 100%;
-  height: 3px;
-  background-color: #ff6b08;
-  position: absolute;
-}
-
 .header-link.home-now::after {
   content: "";
   display: block;
@@ -518,10 +518,6 @@ summary {
   height: 3px;
   background-color: #ff6b08;
   position: absolute;
-}
-
-.library .header-link.home-now::after {
-  display: none;
 }
 
 .header-link:hover, .header-link:focus {
