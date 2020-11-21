@@ -13,8 +13,6 @@ const refs = {
   modal: document.querySelector('[data-modal]'),
   body: document.querySelector('body'),
 
-
-
   inputSearch: document.querySelector('.form-group'),
   watchBtn: document.querySelector('.js-button-watched'),
   queueBtn: document.querySelector('.js-button-queue'),
@@ -24,7 +22,6 @@ const refs = {
 
 genresToFilms().then(r => {
   renderStartMarkup(r);
-
 });
 
 async function genresToFilms() {
@@ -52,7 +49,6 @@ function renderStartMarkup(movies) {
       element.addEventListener('click', a);
     },
   );
-
 }
 
 function createMenuMoviesMarkup(movies) {
@@ -83,9 +79,6 @@ function onOutModalClick(evt) {
   }
 }
 
-
-
-
 function a(e) {
   e.preventDefault();
   let idFilm = e.currentTarget.getAttribute('data-id');
@@ -99,7 +92,6 @@ function a(e) {
     closeModalBtn.addEventListener('click', toggleModal);
     toggleModal(movie);
   });
-
 }
 
 //films search
@@ -112,9 +104,8 @@ refs.inputSearch.addEventListener('input', debounce(onSearch, 1000));
 
 function onSearch(event) {
   event.preventDefault();
-  refs.filmSearchMarkup.innerHTML = '';
-  fetchingSerchFilms();
 
+  fetchingSerchFilms();
 }
 
 function fetchingSerchFilms() {
@@ -128,8 +119,6 @@ function fetchingSerchFilms() {
 
 // Local Storage
 const WATCHED_FILMS = 'watched';
-
-console.log(localStorage);
 
 refs.addWatchBtn.addEventListener('click', watchedFilms);
 

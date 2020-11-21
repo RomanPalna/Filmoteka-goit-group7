@@ -51,8 +51,9 @@
         ),
         url('/images/header/header-tablet.jpg');
 
-        rgba(0, 0, 0, 0.56)), 
-         url('/images/header/header-mobile.jpg');
+        rgba(0, 0, 0, 0.56), 
+         url('/images/header/header-mobile.jpg')
+        }
          @media screen and (min-device-pixel-ratio: 2),
                 screen and (min-resolution: 192dpi),
                 screen and (min-resolution: 2dppx) {
