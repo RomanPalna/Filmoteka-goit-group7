@@ -5,17 +5,26 @@ import filmCardTpl from './templates/filmCard.hbs';
 import './js/modal.js';
 import modalTpl from './templates/modal.hbs';
 
+const filmApi = new FilmApi();
+
 const refs = {
   galery: document.querySelector('.js-galery'),
+
   modal: document.querySelector('[data-modal]'),
   body: document.querySelector('body'),
-};
 
-const filmApi = new FilmApi();
+
+
+  inputSearch: document.querySelector('.form-group'),
+  watchBtn: document.querySelector('.js-button-watched'),
+  queueBtn: document.querySelector('.js-button-queue'),
+  addWatchBtn: document.querySelector('.add-to-watched-js'),
+  addQueueBtn: document.querySelector('.add-to-queue-js'),
+};
 
 genresToFilms().then(r => {
   renderStartMarkup(r);
-  console.log(r);
+
 });
 
 async function genresToFilms() {
@@ -43,12 +52,11 @@ function renderStartMarkup(movies) {
       element.addEventListener('click', a);
     },
   );
-  console.log('huokygdf');
+
 }
 
 function createMenuMoviesMarkup(movies) {
   return movies.map(filmCardTpl).join('');
-  console.log('jjj');
 }
 
 function toggleModal() {
@@ -75,13 +83,8 @@ function onOutModalClick(evt) {
   }
 }
 
-// body.addEventListener('click', closeModalByOverlay);
 
-// function closeModalByOverlay(event) {
-//   if (event.currentTarget === event.target) {
-//     onCloseModal();
-//   }
-// }
+
 
 function a(e) {
   e.preventDefault();
@@ -91,8 +94,57 @@ function a(e) {
 
     const card = modalTpl(movie);
     modalContainer.innerHTML = card;
+
     let closeModalBtn = document.querySelector('[data-modal-close]');
     closeModalBtn.addEventListener('click', toggleModal);
     toggleModal(movie);
   });
+
 }
+
+//films search
+refs.inputSearch.addEventListener('keydown', function (event) {
+  if (event.keyCode === 13) {
+    event.preventDefault();
+  }
+});
+refs.inputSearch.addEventListener('input', debounce(onSearch, 1000));
+
+function onSearch(event) {
+  event.preventDefault();
+  refs.filmSearchMarkup.innerHTML = '';
+  fetchingSerchFilms();
+
+}
+
+function fetchingSerchFilms() {
+  const searchQuery = refs.inputSearch.elements.query.value;
+
+  return filmApi
+    .fetchSearch(searchQuery)
+    .then(data => data.results)
+    .then(renderStartMarkup);
+}
+
+// Local Storage
+const WATCHED_FILMS = 'watched';
+
+console.log(localStorage);
+
+refs.addWatchBtn.addEventListener('click', watchedFilms);
+
+function watchedFilms() {
+  console.log('Register click');
+  // const watch = filmApi
+  //   .fetchFilm()
+  //   .then(localStorage.setItem(WATCHED_FILMS, JSON.stringify(watch)));
+
+  // localStorage.setItem(WATCHED_FILMS, JSON.stringify(watch));
+}
+
+// function watchedFilmsFromLocalStorage() {
+//   const savedWatchedFilms = localStorage.getItem(WATCHED_FILMS);
+
+//   if (savedWatchedFilms) {
+//   }
+// }

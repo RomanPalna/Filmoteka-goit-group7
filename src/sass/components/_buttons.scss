@@ -5,7 +5,7 @@
     color: $headerTextColor;
     &:hover,
     &:focus {
-        color: $accentColor;
+        transform: scale(1.1);
     }
     @media screen and (min-width: 768px) {
         width: 136px;
@@ -29,7 +29,7 @@
     @extend %button;
     font-size: 12px;
     line-height: 16px;
-    max-width: 134px;
+    min-width: 105px;
     background-color: $accentColor;
     color: $headerTextColor;
 }
@@ -40,9 +40,13 @@
     line-height: 16px;
     border: 1px solid $filmTitleColor;
     color: $filmTitleColor;
-    max-width: 134px;
+    min-width: 105px;
 }
 
-.buttons-container {
-    text-align: center; 
+.button-container {
+    display: flex;
+    @media screen and (max-width: 767px) {
+        justify-content: center; 
+        
+    }
 }

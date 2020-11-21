@@ -2,9 +2,9 @@
   <div class="container">
     <div class="header-items-container">
       <div class="logo-container">
-        <a href="">
+        <a href="./index.html">
           <svg class="logo-icon" width="24px" height="24px">
-              <use href="/images/icons/logo.svg"></use>
+            <use href="/images/icons/logo.svg"></use>
           </svg>
         </a>
         <a href="./index.html" class="logo-text">Filmoteka</a>
@@ -14,21 +14,34 @@
         <a href="./library.html" class="header-link library-now">MY LIBRARY</a>
       </div>
     </div>
-    <div class="form-group">
+    <form class="form-group">
       <input
         type="text"
-        class="search-input input-js form-control"
         name="query"
-        placeholder="Поиск фильмов"
+        autocomplete="off"
+        class="search-input input-js form-control"
+        placeholder="Film Search"
       />
-      <p class="error-msg">
-        Search result not successful. Enter the correct movie name and
-      </p>
-    </div>
+    </form>
+    <p class="error-msg">
+      Search result not successful. Enter the correct movie name and
+    </p>
     <div class="button-group">
       <div class="button-group">
-        <button type="button" class="btn-is-active btn-not-active js-button">WATCHED</button>
-        <button type="button" class="btn-not-active btn-is-active js-button">QUEUE</button>
+
+        <button
+          type="button"
+          class="btn-is-active btn-not-active js-button-watched"
+        >
+          WATCHED
+        </button>
+        <button
+          type="button"
+          class="btn-not-active btn-is-active js-button-queue"
+        >
+          QUEUE
+        </button>
+
       </div>
     </div>
   </div>
@@ -36,30 +49,49 @@
 <div class="backdrop is-hidden" data-modal>
   <div class="modal modal-container">
     <button class="close-button" data-modal-close>X</button>
-    <img src="https://image.tmdb.org/t/p/w400{{poster_path}}" alt="{{title}}" class="modal-image">
+    <img
+      src="https://image.tmdb.org/t/p/w400{{poster_path}}"
+      alt="{{title}}"
+      class="modal-image"
+    />
     <div class="film-descr-container">
-    <h2 class="film-title-modal">A FISTFUL OF LEAD</h2>
-    <div class="film-info">
+      <h2 class="film-title-modal">A FISTFUL OF LEAD</h2>
+      <div class="film-info">
         <div class="data-film-titles">
-            <p class="title-description">Vote / Votes</p>
-            <p class="title-description">Popularity </p>
-            <p class="title-description">Original Title</p>
-            <p class="title-description">Genre</p>
+          <p class="title-description">Vote / Votes</p>
+          <p class="title-description">Popularity</p>
+          <p class="title-description">Original Title</p>
+          <p class="title-description">Genre</p>
         </div>
         <div class="dynamic-data">
-            <p class="dynamic-data-title"><span class="raiting-flat">7.3</span> / <span class="votes-count">1260</span></p>
-            <p class="dynamic-data-title">100.2</p>
-            <p class="dynamic-data-title">A FISTFUL OF LEAD</p>
-            <p class="dynamic-data-title">Western</p>
+          <p class="dynamic-data-title">
+            <span class="raiting-flat">7.3</span> /
+            <span class="votes-count">1260</span>
+          </p>
+          <p class="dynamic-data-title">100.2</p>
+          <p class="dynamic-data-title">A FISTFUL OF LEAD</p>
+          <p class="dynamic-data-title">Western</p>
         </div>
-    </div>
-    <div class="description-film">
+      </div>
+      <div class="description-film">
         <h3 class="film-about-title">ABOUT</h3>
-        <p class="film-about">Four of the West’s most infamous outlaws assemble to steal a huge stash of gold from the most corrupt settlement of the gold rush towns. But not all goes to plan one is killed and the other three escapes with bags of gold hide out in the abandoned gold mine where they happen across another gang of three – who themselves were planning to hit the very same bank! As tensions rise, things go from bad to worse as they realise the bags of gold are filled with lead... they’ve been double crossed – but by who and how?</p>
+        <p class="film-about">
+          Four of the West’s most infamous outlaws assemble to steal a huge
+          stash of gold from the most corrupt settlement of the gold rush towns.
+          But not all goes to plan one is killed and the other three escapes
+          with bags of gold hide out in the abandoned gold mine where they
+          happen across another gang of three – who themselves were planning to
+          hit the very same bank! As tensions rise, things go from bad to worse
+          as they realise the bags of gold are filled with lead... they’ve been
+          double crossed – but by who and how?
+        </p>
+      </div>
+      <button class="add-to-watched button-modal add-to-watched-js">
+        ADD TO WATCHED
+      </button>
+      <button class="add-to-queue button-modal-is-active add-to-queue-js">
+        ADD TO QUEUE
+      </button>
     </div>
-    <button class="add-to-watched button-modal  add-to-watched-js">ADD TO WATCHED</button>
-    <button class="add-to-queue button-modal-is-active add-to-queue-js">ADD TO QUEUE</button>
-</div>
   </div>
-</div> 
-  
+</div>
