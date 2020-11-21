@@ -575,7 +575,8 @@ summary {
   }
 }
 
-.form-input {
+.form-group {
+  position: relative;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
@@ -602,6 +603,29 @@ summary {
 @media screen and (min-width: 768px) {
   .search-input {
     max-width: 336px;
+  }
+}
+
+.search-icon {
+  position: absolute;
+  top: 4px;
+}
+
+@media screen and (max-width: 767px) {
+  .search-icon {
+    right: 1px;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .search-icon {
+    right: 146px;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .search-icon {
+    right: 274px;
   }
 }
 

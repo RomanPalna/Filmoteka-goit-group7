@@ -193,7 +193,8 @@
     }
 }
 
-.form-input {
+.form-group {
+    position: relative;
     align-items: center;
 }
 
@@ -216,6 +217,23 @@
     @media screen and (min-width: 768px) {
         max-width: 336px;
     }
+}
+
+.search-icon {
+    position: absolute;
+    top: 4px;
+    @media screen and (max-width: 767px) {
+        right: 1px;
+    }
+    @media screen and (min-width: 768px) {
+        right: 146px;
+    }
+    @media screen and (min-width: 1024px) {
+        right: 274px;
+
+    }
+   
+
 }
 
 .error-msg {
