@@ -5,6 +5,8 @@ import filmCardTpl from './templates/filmCard.hbs';
 import './js/modal.js';
 import modalTpl from './templates/modal.hbs';
 
+const filmApi = new FilmApi();
+
 const refs = {
   galery: document.querySelector('.js-galery'),
   inputSearch: document.querySelector('.form-group'),
@@ -13,8 +15,6 @@ const refs = {
   addWatchBtn: document.querySelector('.add-to-watched-js'),
   addQueueBtn: document.querySelector('.add-to-queue-js'),
 };
-
-const filmApi = new FilmApi();
 
 genresToFilms().then(r => {
   renderStartMarkup(r);
@@ -96,17 +96,22 @@ function fetchingSerchFilms() {
 }
 
 // Local Storage
-const WATCHED_FILMS = watched;
+const WATCHED_FILMS = 'watched';
 
 console.log(localStorage);
 
-function watchedFilms() {
-  const watch = filmApi.fetchFilm;
+refs.addWatchBtn.addEventListener('click', watchedFilms);
 
-  localStorage.setItem(WATCHED_FILMS, watch);
+function watchedFilms() {
+  console.log('click');
+  const watch = filmApi
+    .fetchFilm()
+    .then(localStorage.setItem(WATCHED_FILMS, JSON.stringify(watch)));
+
+  // localStorage.setItem(WATCHED_FILMS, JSON.stringify(watch));
 }
 
-function watchedFilmsFromLS() {
+function watchedFilmsFromLocalStorage() {
   const savedWatchedFilms = localStorage.getItem(WATCHED_FILMS);
 
   if (savedWatchedFilms) {
