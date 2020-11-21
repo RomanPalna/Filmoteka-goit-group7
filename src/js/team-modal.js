@@ -3,20 +3,20 @@ import teamTemplate from '../templates/team.hbs';
 import team from './team';
 
 const refs = {
-  rootTeamModal: document.querySelector('#root-team-modal')
+  TeamModal: document.querySelector('#root-team-modal')
 }
 
 
 function renderTeamModal() {
   const markup = teamTemplate(team);
-  refs.rootTeamModal.insertAdjacentHTML('beforeend', markup);
+  refs.TeamModal.insertAdjacentHTML('beforeend', markup);
 }
 
 renderTeamModal();
 
 function onOpenTeamModal() {
-  refs.rootTeamModal.classList.add('is-open');
-  refs.rootTeamModal.addEventListener('click', onCloseTeamModal);
+  refs.TeamModal.classList.add('is-open');
+  refs.TeamModal.addEventListener('click', onCloseTeamModal);
   window.addEventListener('keydown', onPressKey);
 }
 
@@ -37,7 +37,7 @@ function onCloseTeamModal(e) {
 }
 
 function closeTeamModal() {
-  refs.rootTeamModal.classList.remove('is-open');
+  refs.TeamModal.classList.remove('is-open');
   window.removeEventListener('keydown', onPressKey);
 }
 

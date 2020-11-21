@@ -1,10 +1,10 @@
 export default [
   {
-    name: 'Stanislav',
-    surname: 'Yurchenko',
-    photo: './images/team/yurchenko.jpg',
+    name: 'Roman',
+    surname: 'Palna',
+    photo: '../images/teammate-roman.png',
     position: ['Team Leader', 'Frontend Developer'],
-    githubLink: 'https://github.com/StanislavYurchenko',
+    githubLink: 'https://github.com/RomanPalna',
   },
   {
     name: 'Yulia',
