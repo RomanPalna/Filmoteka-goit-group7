@@ -44,15 +44,14 @@ export default class filmApi {
     return movies;
   }
 
-  async fetchSearch() {
+  async fetchSearch(searchQuery) {
     const searchParams = new URLSearchParams({
       api_key: API_KEY,
-      language: en - US,
-      query: this.searchQuery,
+      query: searchQuery,
       include_adult: false,
     });
 
-    const url = `${BASE_URL}?${searchParams}`;
+    const url = `${SEARCH_URL}?${searchParams}`;
 
     const response = await fetch(url);
     const searchingFilm = await response.json();

@@ -7,13 +7,14 @@ import modalTpl from './templates/modal.hbs';
 
 const refs = {
   galery: document.querySelector('.js-galery'),
+  inputSearch: document.querySelector('.form-group'),
+  filmSearchMarkup: document.querySelector('.search-films'),
 };
 
 const filmApi = new FilmApi();
 
 genresToFilms().then(r => {
   renderStartMarkup(r);
-  console.log(r);
 });
 
 async function genresToFilms() {
@@ -41,12 +42,10 @@ function renderStartMarkup(movies) {
       element.addEventListener('click', a);
     },
   );
-  console.log('huokygdf');
 }
 
 function createMenuMoviesMarkup(movies) {
   return movies.map(filmCardTpl).join('');
-  console.log('jjj');
 }
 
 function toggleModal() {
@@ -69,4 +68,28 @@ function a(e) {
   });
 }
 
-console.log(filmApi.fetchSearch);
+//Film Search
+
+refs.inputSearch.addEventListener('input', debounce(onSearch, 1000));
+
+function onSearch(event) {
+  event.preventDefault();
+  refs.filmSearchMarkup.innerHTML = '';
+  fetchingSerchFilms();
+}
+
+async function fetchingSerchFilms() {
+  const searchQuery = refs.inputSearch.elements.query.value;
+
+  const fetchFilmSerch = await filmApi.fetchSearch(searchQuery);
+  const markupSearchFilms = filmMarkups(fetchFilmSerch);
+
+  return markupSearchFilms;
+}
+
+function filmMarkups(searchingFilm) {
+  refs.filmSearchMarkup.insertAdjacentHTML(
+    'beforeend',
+    filmCardTpl(searchingFilm),
+  );
+}
