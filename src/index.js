@@ -70,7 +70,7 @@ function a(e) {
 
 //films search
 refs.inputSearch.addEventListener('keydown', function (event) {
-  if (event.keyCode == 13) {
+  if (event.keyCode === 13) {
     event.preventDefault();
   }
 });
