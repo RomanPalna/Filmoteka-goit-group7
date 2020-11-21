@@ -68,8 +68,7 @@ function a(e) {
   });
 }
 
-//Film Search
-
+//films search
 refs.inputSearch.addEventListener('input', debounce(onSearch, 1000));
 
 function onSearch(event) {
@@ -78,18 +77,13 @@ function onSearch(event) {
   fetchingSerchFilms();
 }
 
-async function fetchingSerchFilms() {
+function fetchingSerchFilms() {
   const searchQuery = refs.inputSearch.elements.query.value;
 
-  const fetchFilmSerch = await filmApi.fetchSearch(searchQuery);
-  const markupSearchFilms = filmMarkups(fetchFilmSerch);
-
-  return markupSearchFilms;
+  return filmApi
+    .fetchSearch(searchQuery)
+    .then(data => data.results)
+    .then(renderStartMarkup);
 }
 
-function filmMarkups(searchingFilm) {
-  refs.filmSearchMarkup.insertAdjacentHTML(
-    'beforeend',
-    filmCardTpl(searchingFilm),
-  );
-}
+function errorMsg() {}
