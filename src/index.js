@@ -3,6 +3,9 @@ import FilmApi from './js/film-api';
 import debounce from 'lodash.debounce';
 import filmCardTpl from './templates/filmCard.hbs';
 import modalTpl from './templates/modal.hbs';
+// pagination stylezz
+import Pagination from 'tui-pagination';
+import 'tui-pagination/dist/tui-pagination.css';
 
 const filmApi = new FilmApi();
 
@@ -18,15 +21,15 @@ const refs = {
   addWatchBtn: document.querySelector('.add-to-watched-js'),
   addQueueBtn: document.querySelector('.add-to-queue-js'),
 };
-
-genresToFilms().then(r => {
+console.log(refs);
+genresToFilms({}).then(r => {
   renderStartMarkup(r);
 });
 
-async function genresToFilms() {
+async function genresToFilms({ page = 1 }) {
   const [genres, films] = await Promise.all([
     filmApi.fetchGanres(),
-    filmApi.fetchFilms(),
+    filmApi.fetchFilms({ page }),
   ]);
   const filmsWithGenres = films.results.map(film => {
     const genresForFilm = genres.genres.filter(genre =>
@@ -117,18 +120,18 @@ function fetchingSerchFilms() {
 }
 
 // Local Storage
-const WATCHED_FILMS = 'watched';
+// const WATCHED_FILMS = 'watched';
 
-refs.addWatchBtn.addEventListener('click', watchedFilms);
+// addWatchBtn.addEventListener('click', watchedFilms);
 
-function watchedFilms() {
-  console.log('Register click');
-  // const watch = filmApi
-  //   .fetchFilm()
-  //   .then(localStorage.setItem(WATCHED_FILMS, JSON.stringify(watch)));
+// function watchedFilms() {
+//   console.log('Register click');
+//   // const watch = filmApi
+//   //   .fetchFilm()
+//   .then(localStorage.setItem(WATCHED_FILMS, JSON.stringify(watch)));
 
-  // localStorage.setItem(WATCHED_FILMS, JSON.stringify(watch));
-}
+// localStorage.setItem(WATCHED_FILMS, JSON.stringify(watch));
+// }
 
 // function watchedFilmsFromLocalStorage() {
 //   const savedWatchedFilms = localStorage.getItem(WATCHED_FILMS);
@@ -136,3 +139,49 @@ function watchedFilms() {
 //   if (savedWatchedFilms) {
 //   }
 // }
+
+// pagination add
+
+const options = {
+  totalItems: 100,
+  itemsPerPage: 10,
+  visiblePages: 10,
+  page: 1,
+  centerAlign: false,
+  firstItemClassName: 'tui-first-child',
+  lastItemClassName: 'tui-last-child',
+  template: {
+    page: '<a href="#" class="tui-page-btn">{{page}}</a>',
+    currentPage:
+      '<strong class="tui-page-btn tui-is-selected">{{page}}</strong>',
+    moveButton:
+      '<a href="#" class="tui-page-btn tui-{{type}}">' +
+      '<span class="tui-ico-{{type}}">{{type}}</span>' +
+      '</a>',
+    disabledMoveButton:
+      '<span class="tui-page-btn tui-is-disabled tui-{{type}}">' +
+      '<span class="tui-ico-{{type}}">{{type}}</span>' +
+      '</span>',
+    moreButton:
+      '<a href="#" class="tui-page-btn tui-{{type}}-is-ellip">' +
+      '<span class="tui-ico-ellip">...</span>' +
+      '</a>',
+  },
+};
+
+const container = document.getElementById('pagination');
+const pagination = new Pagination(container, options);
+// const pagination = new Pagination('pagination', options);
+
+pagination.on('beforeMove', async evt => {
+  const { page } = evt;
+  const result = await genresToFilms({ page });
+
+  if (result) {
+    pagination.movePageTo(page);
+    renderStartMarkup(result);
+  } else {
+    return false;
+  }
+});
+pagination.on('afterMove', ({ page }) => console.log(page));
