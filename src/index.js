@@ -2,15 +2,13 @@ import './sass/main.css';
 import FilmApi from './js/film-api';
 import debounce from 'lodash.debounce';
 import filmCardTpl from './templates/filmCard.hbs';
-import './js/team-modal.js'
+import './js/team-modal.js';
 import modalTpl from './templates/modal.hbs';
-import {startSpinner, stopSpinner} from './js/spinner';
+import { startSpinner, stopSpinner } from './js/spinner';
 
 // pagination stylezz
 import Pagination from 'tui-pagination';
 import 'tui-pagination/dist/tui-pagination.css';
-
-
 
 const filmApi = new FilmApi();
 
