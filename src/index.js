@@ -5,13 +5,14 @@ import filmCardTpl from './templates/filmCard.hbs';
 import './js/team-modal.js'
 import modalTpl from './templates/modal.hbs';
 import {startSpinner, stopSpinner} from './js/spinner';
+import StorageApi from './js/storage-api';
 
 // pagination stylezz
 import Pagination from 'tui-pagination';
 import 'tui-pagination/dist/tui-pagination.css';
 
-
-
+let idFilm;
+const storageApi = new StorageApi();
 const filmApi = new FilmApi();
 
 const refs = {
@@ -88,17 +89,35 @@ function onOutModalClick(evt) {
 
 function a(e) {
   e.preventDefault();
-  let idFilm = e.currentTarget.getAttribute('data-id');
+  idFilm = e.currentTarget.getAttribute('data-id');
   filmApi.fetchFilm(idFilm).then(function (movie) {
     const modalContainer = document.querySelector('.modal-container');
 
     const card = modalTpl(movie);
     modalContainer.innerHTML = card;
 
+    let addWatchBtn = document.querySelector('.add-to-watched-js');
+    let addQueueBtn = document.querySelector('.add-to-queue-js');
     let closeModalBtn = document.querySelector('[data-modal-close]');
+
+    addWatchBtn.addEventListener('click', addToWatchedList);
+    addQueueBtn.addEventListener('click', addToQueueList)
     closeModalBtn.addEventListener('click', toggleModal);
     toggleModal(movie);
   });
+}
+
+function addToWatchedList(e) {
+  e.preventDefault();
+  storageApi.addToWatched(idFilm);
+  console.log('adToWachedList');
+
+}
+
+function addToQueueList(e) {
+  e.preventDefault();
+  storageApi.addToQueue(idFilm);
+  console.log('addToQueueList');
 }
 
 //films search
