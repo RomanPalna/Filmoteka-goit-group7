@@ -1,0 +1,1 @@
+{"version":3,"sources":["library.js"],"names":["console","log"],"mappings":";;;AACA,aADA,QAAA,mBACAA,QAAQC,IAAI","file":"library.18b230bf.js","sourceRoot":"../src","sourcesContent":["import './sass/main.css';\r\nconsole.log('sfdasd');\r\n"]}
