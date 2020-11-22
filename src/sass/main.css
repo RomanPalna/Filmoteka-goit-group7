@@ -64,6 +64,10 @@ button {
   }
 }
 
+body.modal-open {
+  overflow: hidden;
+}
+
 /*! modern-normalize v0.6.0 | MIT License | https://github.com/sindresorhus/modern-normalize */
 /*
 Document
@@ -329,7 +333,8 @@ summary {
 }
 
 .btn-is-active:hover, .btn-not-active:hover, .button-modal-is-active:hover, .button-modal:hover, .btn-is-active:focus, .btn-not-active:focus, .button-modal-is-active:focus, .button-modal:focus {
-  color: #ff6b08;
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
 }
 
 @media screen and (min-width: 768px) {
@@ -354,7 +359,7 @@ summary {
 .button-modal-is-active {
   font-size: 12px;
   line-height: 16px;
-  max-width: 134px;
+  min-width: 105px;
   background-color: #ff6b08;
   color: #ffffff;
 }
@@ -364,11 +369,21 @@ summary {
   line-height: 16px;
   border: 1px solid #000000;
   color: #000000;
-  max-width: 134px;
+  min-width: 105px;
 }
 
-.buttons-container {
-  text-align: center;
+.button-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+@media screen and (max-width: 767px) {
+  .button-container {
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
 }
 
 .header {
@@ -379,7 +394,7 @@ summary {
   text-align: center;
 }
 
-.library .header.overlay {
+.overlay {
   height: 230px;
   margin-left: auto;
   margin-right: auto;
@@ -392,14 +407,14 @@ summary {
 }
 
 @media screen and (min-device-pixel-ratio: 2), screen and (-webkit-min-device-pixel-ratio: 2), screen and (min-resolution: 192dpi), screen and (min-resolution: 2dppx) {
-  .library .header.overlay {
+  .overlay {
     background-image: -webkit-gradient(linear, left top, right top, from(rgba(0, 0, 0, 0.56)), to(rgba(0, 0, 0, 0.56))), url("/images/header/header-mobile.jpg");
     background-image: linear-gradient(to right, rgba(0, 0, 0, 0.56), rgba(0, 0, 0, 0.56)), url("/images/header/header-mobile.jpg");
   }
 }
 
 @media screen and (min-width: 768px) {
-  .library .header.overlay {
+  .overlay {
     max-width: 768px;
     background-image: -webkit-gradient(linear, left top, right top, from(rgba(0, 0, 0, 0.56)), to(rgba(0, 0, 0, 0.56))), url("/images/header/header-tablet.jpg");
     background-image: linear-gradient(to right, rgba(0, 0, 0, 0.56), rgba(0, 0, 0, 0.56)), url("/images/header/header-tablet.jpg");
@@ -407,14 +422,14 @@ summary {
 }
 
 @media screen and (min-width: 768px) and (min-device-pixel-ratio: 2), screen and (min-width: 768px) and (-webkit-min-device-pixel-ratio: 2), screen and (min-width: 768px) and (min-resolution: 192dpi), screen and (min-width: 768px) and (min-resolution: 2dppx) {
-  .library .header.overlay {
+  .overlay {
     background-image: -webkit-gradient(linear, left top, right top, from(rgba(0, 0, 0, 0.56)), to(rgba(0, 0, 0, 0.56))), url("/images/header/header-tablet.jpg");
     background-image: linear-gradient(to right, rgba(0, 0, 0, 0.56), rgba(0, 0, 0, 0.56)), url("/images/header/header-tablet.jpg");
   }
 }
 
 @media screen and (min-width: 1024px) {
-  .library .header.overlay {
+  .overlay {
     max-width: 1600px;
     background-image: -webkit-gradient(linear, left top, right top, from(rgba(0, 0, 0, 0.56)), to(rgba(0, 0, 0, 0.56))), url("/images/header/header-desktop.jpg");
     background-image: linear-gradient(to right, rgba(0, 0, 0, 0.56), rgba(0, 0, 0, 0.56)), url("/images/header/header-desktop.jpg");
@@ -422,82 +437,26 @@ summary {
 }
 
 @media screen and (min-width: 1024px) and (min-device-pixel-ratio: 2), screen and (min-width: 1024px) and (-webkit-min-device-pixel-ratio: 2), screen and (min-width: 1024px) and (min-resolution: 192dpi), screen and (min-width: 1024px) and (min-resolution: 2dppx) {
-  .library .header.overlay {
+  .overlay {
     background-image: -webkit-gradient(linear, left top, right top, from(rgba(0, 0, 0, 0.56)), to(rgba(0, 0, 0, 0.56))), url("/images/header/header-desktop.jpg");
     background-image: linear-gradient(to right, rgba(0, 0, 0, 0.56), rgba(0, 0, 0, 0.56)), url("/images/header/header-desktop.jpg");
   }
 }
 
-.header.overlay {
-  height: 230px;
-  margin-left: auto;
-  margin-right: auto;
-  background-color: #000000;
-  background-position: center;
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-image: -webkit-gradient(linear, left top, right top, from(rgba(0, 0, 0, 0.56)), to(rgba(0, 0, 0, 0.56))), url("/images/header/header-mobile.jpg");
-  background-image: linear-gradient(to right, rgba(0, 0, 0, 0.56), rgba(0, 0, 0, 0.56)), url("/images/header/header-mobile.jpg");
-}
-
-@media screen and (min-device-pixel-ratio: 2), screen and (-webkit-min-device-pixel-ratio: 2), screen and (min-resolution: 192dpi), screen and (min-resolution: 2dppx) {
-  .header.overlay {
-    background-image: -webkit-gradient(linear, left top, right top, from(rgba(0, 0, 0, 0.56)), to(rgba(0, 0, 0, 0.56))), url("/images/header/header-mobile.jpg");
-    background-image: linear-gradient(to right, rgba(0, 0, 0, 0.56), rgba(0, 0, 0, 0.56)), url("/images/header/header-mobile.jpg");
-  }
-}
-
-@media screen and (min-width: 768px) {
-  .header.overlay {
-    max-width: 768px;
-    background-image: -webkit-gradient(linear, left top, right top, from(rgba(0, 0, 0, 0.56)), to(rgba(0, 0, 0, 0.56))), url("/images/header/header-tablet.jpg");
-    background-image: linear-gradient(to right, rgba(0, 0, 0, 0.56), rgba(0, 0, 0, 0.56)), url("/images/header/header-tablet.jpg");
-  }
-}
-
-@media screen and (min-width: 768px) and (min-device-pixel-ratio: 2), screen and (min-width: 768px) and (-webkit-min-device-pixel-ratio: 2), screen and (min-width: 768px) and (min-resolution: 192dpi), screen and (min-width: 768px) and (min-resolution: 2dppx) {
-  .header.overlay {
-    background-image: -webkit-gradient(linear, left top, right top, from(rgba(0, 0, 0, 0.56)), to(rgba(0, 0, 0, 0.56))), url("/images/header/header-tablet.jpg");
-    background-image: linear-gradient(to right, rgba(0, 0, 0, 0.56), rgba(0, 0, 0, 0.56)), url("/images/header/header-tablet.jpg");
-  }
-}
-
-@media screen and (min-width: 1024px) {
-  .header.overlay {
-    max-width: 1600px;
-    background-image: -webkit-gradient(linear, left top, right top, from(rgba(0, 0, 0, 0.56)), to(rgba(0, 0, 0, 0.56))), url("/images/header/header-desktop.jpg");
-    background-image: linear-gradient(to right, rgba(0, 0, 0, 0.56), rgba(0, 0, 0, 0.56)), url("/images/header/header-desktop.jpg");
-  }
-}
-
-@media screen and (min-width: 1024px) and (min-device-pixel-ratio: 2), screen and (min-width: 1024px) and (-webkit-min-device-pixel-ratio: 2), screen and (min-width: 1024px) and (min-resolution: 192dpi), screen and (min-width: 1024px) and (min-resolution: 2dppx) {
-  .header.overlay {
-    background-image: -webkit-gradient(linear, left top, right top, from(rgba(0, 0, 0, 0.56)), to(rgba(0, 0, 0, 0.56))), url("/images/header/header-desktop.jpg");
-    background-image: linear-gradient(to right, rgba(0, 0, 0, 0.56), rgba(0, 0, 0, 0.56)), url("/images/header/header-desktop.jpg");
-  }
-}
-
-.library .header.overlay {
-  height: 230px;
-  margin-left: auto;
-  margin-right: auto;
-  background-color: #000000;
-  background-position: center;
-  background-size: cover;
-  background-repeat: no-repeat;
+.library .overlay {
   background-image: -webkit-gradient(linear, left top, right top, from(rgba(0, 0, 0, 0.56)), to(rgba(0, 0, 0, 0.56))), url("/images/header/library-mobile.jpg");
   background-image: linear-gradient(to right, rgba(0, 0, 0, 0.56), rgba(0, 0, 0, 0.56)), url("/images/header/library-mobile.jpg");
 }
 
 @media screen and (min-device-pixel-ratio: 2), screen and (-webkit-min-device-pixel-ratio: 2), screen and (min-resolution: 192dpi), screen and (min-resolution: 2dppx) {
-  .library .header.overlay {
+  .library .overlay {
     background-image: -webkit-gradient(linear, left top, right top, from(rgba(0, 0, 0, 0.56)), to(rgba(0, 0, 0, 0.56))), url("/images/header/library-mobile.jpg");
     background-image: linear-gradient(to right, rgba(0, 0, 0, 0.56), rgba(0, 0, 0, 0.56)), url("/images/header/library-mobile.jpg");
   }
 }
 
 @media screen and (min-width: 768px) {
-  .library .header.overlay {
+  .library .overlay {
     max-width: 768px;
     background-image: -webkit-gradient(linear, left top, right top, from(rgba(0, 0, 0, 0.56)), to(rgba(0, 0, 0, 0.56))), url("/images/header/library-tablet.jpg");
     background-image: linear-gradient(to right, rgba(0, 0, 0, 0.56), rgba(0, 0, 0, 0.56)), url("/images/header/library-tablet.jpg");
@@ -505,14 +464,14 @@ summary {
 }
 
 @media screen and (min-width: 768px) and (min-device-pixel-ratio: 2), screen and (min-width: 768px) and (-webkit-min-device-pixel-ratio: 2), screen and (min-width: 768px) and (min-resolution: 192dpi), screen and (min-width: 768px) and (min-resolution: 2dppx) {
-  .library .header.overlay {
+  .library .overlay {
     background-image: -webkit-gradient(linear, left top, right top, from(rgba(0, 0, 0, 0.56)), to(rgba(0, 0, 0, 0.56))), url("/images/header/library-tablet.jpg");
     background-image: linear-gradient(to right, rgba(0, 0, 0, 0.56), rgba(0, 0, 0, 0.56)), url("/images/header/library-tablet.jpg");
   }
 }
 
 @media screen and (min-width: 1024px) {
-  .library .header.overlay {
+  .library .overlay {
     max-width: 1600px;
     background-image: -webkit-gradient(linear, left top, right top, from(rgba(0, 0, 0, 0.56)), to(rgba(0, 0, 0, 0.56))), url("/images/header/library-desktop.jpg");
     background-image: linear-gradient(to right, rgba(0, 0, 0, 0.56), rgba(0, 0, 0, 0.56)), url("/images/header/library-desktop.jpg");
@@ -520,10 +479,23 @@ summary {
 }
 
 @media screen and (min-width: 1024px) and (min-device-pixel-ratio: 2), screen and (min-width: 1024px) and (-webkit-min-device-pixel-ratio: 2), screen and (min-width: 1024px) and (min-resolution: 192dpi), screen and (min-width: 1024px) and (min-resolution: 2dppx) {
-  .library .header.overlay {
+  .library .overlay {
     background-image: -webkit-gradient(linear, left top, right top, from(rgba(0, 0, 0, 0.56)), to(rgba(0, 0, 0, 0.56))), url("/images/header/library-desktop.jpg");
     background-image: linear-gradient(to right, rgba(0, 0, 0, 0.56), rgba(0, 0, 0, 0.56)), url("/images/header/library-desktop.jpg");
   }
+}
+
+.library .library-now::after {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 3px;
+  background-color: #ff6b08;
+  position: absolute;
+}
+
+.library .header-link.home-now::after {
+  display: none;
 }
 
 .header-link {
@@ -539,7 +511,7 @@ summary {
   position: relative;
 }
 
-.header-link.active::after {
+.header-link.home-now::after {
   content: "";
   display: block;
   width: 100%;
@@ -582,10 +554,6 @@ summary {
           align-items: center;
 }
 
-.logo-icon {
-  background-color: beige;
-}
-
 @media screen and (min-width: 768px) {
   .logo-icon {
     margin-right: 10px;
@@ -607,15 +575,16 @@ summary {
   }
 }
 
-.form-input {
+.form-group {
+  position: relative;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
 }
 
 .search-input {
-  color: #C4C4C4;
   outline: black;
+  color: #8c8c8c;
   height: 20px;
   background-color: rgba(0, 0, 0, 0);
   border-top: 0;
@@ -627,9 +596,40 @@ summary {
   margin-bottom: 22px;
 }
 
+.library .search-input {
+  display: none;
+}
+
 @media screen and (min-width: 768px) {
   .search-input {
     max-width: 336px;
+  }
+}
+
+.search-icon {
+  position: absolute;
+  top: 4px;
+}
+
+.library .search-icon {
+  display: none;
+}
+
+@media screen and (max-width: 767px) {
+  .search-icon {
+    right: 1px;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .search-icon {
+    right: 146px;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .search-icon {
+    right: 274px;
   }
 }
 
@@ -652,6 +652,18 @@ summary {
   .error-msg {
     text-align: center;
   }
+}
+
+.library .error-msg {
+  display: none;
+}
+
+.button-group {
+  display: none;
+}
+
+.library .button-group {
+  display: block;
 }
 
 .section {
@@ -796,6 +808,21 @@ summary {
   }
 }
 
+.backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.2);
+  opacity: 1;
+  -webkit-transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1), visibility 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1), visibility 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  z-index: 5;
+  overflow-y: scroll;
+  padding: 50px 30px;
+}
+
 .backdrop.is-hidden {
   opacity: 0;
   visibility: hidden;
@@ -805,6 +832,8 @@ summary {
 }
 
 .modal {
+  left: auto;
+  right: auto;
   overflow-y: scroll;
   position: relative;
   padding: 20px;
@@ -816,8 +845,19 @@ summary {
   width: 100%;
 }
 
+.modal ::-webkit-scrollbar {
+  display: none;
+}
+
+@media screen and (max-width: 320px) {
+  .modal {
+    max-width: 400px;
+  }
+}
+
 @media screen and (min-width: 768px) {
   .modal {
+    max-width: 768px;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -829,8 +869,34 @@ summary {
   }
 }
 
+@media screen and (min-width: 1024px) {
+  .modal {
+    max-width: 1024px;
+  }
+}
+
+@media screen and (max-width: 320px) {
+  .modal-container {
+    max-width: 320px;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .modal-container {
+    max-width: 768px;
+  }
+}
+
 .modal-image {
   border-radius: 5px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+@media screen and (min-width: 768px) {
+  .modal-image {
+    margin-right: 30px;
+  }
 }
 
 .film-title-modal {
@@ -881,12 +947,18 @@ summary {
   line-height: 20px;
 }
 
+@media screen and (min-width: 768px) {
+  .film-about {
+    width: 294px;
+  }
+}
+
 .raiting-flat {
   font-weight: 500;
   font-size: 12px;
   line-height: 16px;
-  width: 36px;
-  height: 16px;
+  padding-left: 7px;
+  padding-right: 7px;
   background-color: #ff6b08;
   color: #ffffff;
   border-radius: 5px;
@@ -896,11 +968,19 @@ summary {
   font-weight: 500;
   font-size: 12px;
   line-height: 16px;
-  width: 36px;
-  height: 16px;
+  padding-left: 7px;
+  padding-right: 7px;
   background-color: #F7F7F7;
   border-radius: 5px;
   margin-top: 11px;
+}
+
+@media screen and (max-width: 767px) {
+  .film-descr-container {
+    margin-right: auto;
+    margin-left: auto;
+    max-width: 400px;
+  }
 }
 
 .film-info-container {
@@ -909,7 +989,13 @@ summary {
 
 @media screen and (min-width: 768px) {
   .film-info-container {
-    margin-left: 30px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .film-info-container {
     width: 294px;
   }
 }
@@ -919,6 +1005,7 @@ summary {
     width: 426px;
   }
 }
+
 
 .team-modal {
   text-decoration: underline;
@@ -1081,5 +1168,106 @@ summary {
   background-color: rgba(0, 0, 0, 0.1);
   -webkit-transform: rotate(90deg) scale(1.1);
           transform: rotate(90deg) scale(1.1);
+
+.close-button {
+  position: absolute;
+  background-color: #ffffff;
+  top: 3px;
+  right: 7px;
+  border: transparent;
+  color: #8c8c8c;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  outline: transparent;
+}
+
+@-webkit-keyframes spinner-line-fade-more {
+  0%, 100% {
+    opacity: 0;
+    /* minimum opacity */
+  }
+  1% {
+    opacity: 1;
+  }
+}
+
+@keyframes spinner-line-fade-more {
+  0%, 100% {
+    opacity: 0;
+    /* minimum opacity */
+  }
+  1% {
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes spinner-line-fade-quick {
+  0%, 39%, 100% {
+    opacity: 0.25;
+    /* minimum opacity */
+  }
+  40% {
+    opacity: 1;
+  }
+}
+
+@keyframes spinner-line-fade-quick {
+  0%, 39%, 100% {
+    opacity: 0.25;
+    /* minimum opacity */
+  }
+  40% {
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes spinner-line-fade-default {
+  0%, 100% {
+    opacity: 0.22;
+    /* minimum opacity */
+  }
+  1% {
+    opacity: 1;
+  }
+}
+
+@keyframes spinner-line-fade-default {
+  0%, 100% {
+    opacity: 0.22;
+    /* minimum opacity */
+  }
+  1% {
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes spinner-line-shrink {
+  0%, 25%, 100% {
+    /* minimum scale and opacity */
+    -webkit-transform: scale(0.5);
+            transform: scale(0.5);
+    opacity: 0.25;
+  }
+  26% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes spinner-line-shrink {
+  0%, 25%, 100% {
+    /* minimum scale and opacity */
+    -webkit-transform: scale(0.5);
+            transform: scale(0.5);
+    opacity: 0.25;
+  }
+  26% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+    opacity: 1;
+  }
+
 }
 /*# sourceMappingURL=main.css.map */

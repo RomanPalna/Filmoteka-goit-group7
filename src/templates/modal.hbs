@@ -1,0 +1,28 @@
+<button class="close-button" data-modal-close>X</button>
+<img src="https://image.tmdb.org/t/p/w400{{poster_path}}" alt="{{title}}" class="modal-image">
+<div class="film-descr-container">
+    <h2 class="film-title-modal">{{title}}</h2>
+    <div class="film-info">
+        <div class="data-film-titles">
+            <p class="title-description">Vote / Votes</p>
+            <p class="title-description">Popularity </p>
+            <p class="title-description">Original Title</p>
+            <p class="title-description">Genre</p>
+        </div>
+        <div class="dynamic-data">
+            <p class="dynamic-data-title"><span class="raiting-flat">{{vote_average}}</span> / <span
+                    class="votes-count">{{vote_count}}</span></p>
+            <p class="dynamic-data-title">{{popularity}}</p>
+            <p class="dynamic-data-title">{{original_title}}</p>
+            <p class="dynamic-data-title">{{#each genres}}{{name}} {{/each}}</p>
+        </div>
+    </div>
+    <div class="description-film">
+        <h3 class="film-about-title">ABOUT</h3>
+        <p class="film-about">{{overview}}</p>
+    </div>
+    <div class="button-container">
+        <button class="add-to-watched button-modal add-to-watched-js">ADD TO WATCHED</button>
+        <button class="add-to-queue button-modal-is-active add-to-queue-js">ADD TO QUEUE</button>
+    </div>
+</div>

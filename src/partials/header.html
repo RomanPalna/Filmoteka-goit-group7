@@ -1,29 +1,55 @@
-<header class="header js-header overlay">
+<header class="header overlay">
   <div class="container">
     <div class="header-items-container">
       <div class="logo-container">
-        <a href="">
+        <a href="./index.html">
           <svg class="logo-icon" width="24px" height="24px">
-              <use href="/images/icons/logo.svg"></use>
+            <use href="/images/icons/logo.svg"></use>
           </svg>
         </a>
         <a href="./index.html" class="logo-text">Filmoteka</a>
       </div>
       <div class="links-container">
-        <a href="./index.html" class="header-link active">HOME</a>
-        <a href="./library.html" class="header-link">MY LIBRARY</a>
+        <a href="./index.html" class="header-link home-now">HOME</a>
+        <a href="./library.html" class="header-link library-now">MY LIBRARY</a>
       </div>
     </div>
-    <div class="form-group">
+    <form class="form-group">
       <input
         type="text"
-        class="search-input input-js form-control"
         name="query"
-        placeholder="Поиск фильмов"
+        autocomplete="off"
+        class="search-input input-js form-control"
+        placeholder="Film Search"
       />
-      <p class="error-msg">
-        Search result not successful. Enter the correct movie name and
-      </p>
+      <svg class="search-icon" width="12px" height="12px">
+        <use href="/images/icons/search.svg"></use>
+      </svg>
+    </form>
+    <p class="error-msg">
+      Search result not successful. Enter the correct movie name and
+    </p>
+    <div class="button-group">
+      <div class="button-group">
+
+        <button
+          type="button"
+          class="btn-is-active btn-not-active js-button-watched"
+        >
+          WATCHED
+        </button>
+        <button
+          type="button"
+          class="btn-not-active btn-is-active js-button-queue"
+        >
+          QUEUE
+        </button>
+
+      </div>
     </div>
   </div>
 </header>
+<div class="backdrop is-hidden" data-modal>
+  <div class="modal modal-container">
+  </div>
+</div>
