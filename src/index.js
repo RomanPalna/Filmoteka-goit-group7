@@ -146,11 +146,11 @@ function fetchingSerchFilms() {
 // pagination add
 
 const options = {
-  totalItems: 100,
+  totalItems: 500,
   itemsPerPage: 10,
   visiblePages: 10,
   page: 1,
-  centerAlign: false,
+  centerAlign: true,
   firstItemClassName: 'tui-first-child',
   lastItemClassName: 'tui-last-child',
   template: {
@@ -187,4 +187,4 @@ pagination.on('beforeMove', async evt => {
     return false;
   }
 });
-pagination.on('afterMove', ({ page }) => console.log(page));
+// pagination.on('afterMove', ({ page }) => console.log(page));
