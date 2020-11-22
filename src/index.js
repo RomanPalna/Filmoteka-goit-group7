@@ -3,9 +3,13 @@ import FilmApi from './js/film-api';
 import debounce from 'lodash.debounce';
 import filmCardTpl from './templates/filmCard.hbs';
 import modalTpl from './templates/modal.hbs';
+
+import {startSpinner, stopSpinner} from './js/spinner';
+
 // pagination stylezz
 import Pagination from 'tui-pagination';
 import 'tui-pagination/dist/tui-pagination.css';
+
 
 const filmApi = new FilmApi();
 
