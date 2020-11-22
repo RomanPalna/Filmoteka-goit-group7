@@ -1,4 +1,4 @@
-
+import darya from '../images/teammate-darya.jpg';
 import teamTemplate from '../templates/team.hbs';
 import team from './team';
 

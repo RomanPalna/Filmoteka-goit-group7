@@ -1,9 +1,9 @@
-import '../images/teammate-darya.jpg';
+
 export default [
   {
     name: 'Roman',
     surname: 'Palna',
-    photo: '../images/teammate-darya.jpg',
+    photo: './images/teammate-darya.jpg',
     position: ['Team Leader', 'Frontend Developer'],
     githubLink: 'https://github.com/RomanPalna',
   },
@@ -17,7 +17,7 @@ export default [
   {
     name: 'Darya',
     surname: 'Ungvari',
-    photo: '/images/teammate-darya.jpg',
+    photo: './images/teammate-darya.jpg',
     position: ['Frontend Developer'],
     githubLink: 'https://github.com/darya-ungvari',
   },
