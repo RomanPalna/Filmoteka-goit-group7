@@ -8,7 +8,7 @@ import {startSpinner, stopSpinner} from './js/spinner';
 
 // pagination stylezz
 import Pagination from 'tui-pagination';
-import 'tui-pagination/dist/tui-pagination.css';
+//import 'tui-pagination/dist/tui-pagination.css';
 
 
 
