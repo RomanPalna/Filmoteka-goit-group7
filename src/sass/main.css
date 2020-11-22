@@ -1006,6 +1006,18 @@ summary {
   }
 }
 
+.close-button {
+  position: absolute;
+  background-color: #ffffff;
+  top: 3px;
+  right: 7px;
+  border: transparent;
+  color: #8c8c8c;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  outline: transparent;
+}
 
 .team-modal {
   text-decoration: underline;
@@ -1168,18 +1180,6 @@ summary {
   background-color: rgba(0, 0, 0, 0.1);
   -webkit-transform: rotate(90deg) scale(1.1);
           transform: rotate(90deg) scale(1.1);
-
-.close-button {
-  position: absolute;
-  background-color: #ffffff;
-  top: 3px;
-  right: 7px;
-  border: transparent;
-  color: #8c8c8c;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  outline: transparent;
 }
 
 @-webkit-keyframes spinner-line-fade-more {
@@ -1268,6 +1268,5 @@ summary {
             transform: scale(1);
     opacity: 1;
   }
-
 }
 /*# sourceMappingURL=main.css.map */
