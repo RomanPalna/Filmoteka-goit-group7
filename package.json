@@ -32,6 +32,8 @@
     "lodash.debounce": "^4.0.8",
     "parcel-plugin-nuke-dist": "^1.0.1",
     "spin.js": "^4.1.0"
+    "tui-pagination": "^3.4.0"
+
   },
   "browserslist": [
     "last 3 and_chr versions",

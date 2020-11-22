@@ -30,9 +30,9 @@ export default class filmApi {
     return movie;
   }
 
-  async fetchFilms() {
+  async fetchFilms({ page = 1 }) {
     const searchParams = new URLSearchParams({
-      page: this.page,
+      page: page,
       api_key: API_KEY,
     });
 
