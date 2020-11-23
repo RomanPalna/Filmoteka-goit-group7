@@ -10,8 +10,18 @@ export default class StorageApi {
     this.watchArray = [];
   }
 
-  addToQueue(id) {
-    console.log(id);
+  addToQueue(movie) {
+    const queueFilms = JSON.parse(localStorage.getItem('QueueFilm'));
+
+    if (queueFilms !== null) {
+      queueFilms[movie.id] = movie;
+      localStorage.setItem('QueueFilm', JSON.stringify(queueFilms));
+    } else {
+      localStorage.setItem(
+        'QueueFilm',
+        JSON.stringify({ [movie.id]: movie }),
+      );
+    }
 
     console.log('storage. addTo que');
   }

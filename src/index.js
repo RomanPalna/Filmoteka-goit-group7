@@ -74,6 +74,7 @@ function toggleModal() {
 }
 
 function onCloseModal(event) {
+  document.body.classList.toggle('modal-open');
   refs.modal.classList.toggle('is-hidden');
   document.removeEventListener('keydown', onCloseModalByEsc);
 }
@@ -106,8 +107,13 @@ function a(e) {
 
     addWatchBtn.addEventListener('click', e => {
       addToWatchedList(e, movie);
+      addWatchBtn.classList.toggle('button-modal-is-active');
     });
-    addQueueBtn.addEventListener('click', addToQueueList);
+    
+    addQueueBtn.addEventListener('click', e => {
+      addToQueueList(e, movie);
+      addQueueBtn.classList.toggle('button-modal-is-active');
+    });
     closeModalBtn.addEventListener('click', toggleModal);
     toggleModal(movie);
   });
@@ -119,9 +125,12 @@ function addToWatchedList(e, movie) {
   console.log('adToWachedList');
 }
 
-function addToQueueList(e) {
+function addToQueueList(e, movie) {
+  console.log(movie);
   e.preventDefault();
-  storageApi.addToQueue(idFilm);
+  storageApi.addToQueue(movie);
+ 
+  
   console.log('addToQueueList');
 }
 
@@ -171,15 +180,7 @@ function fetchingSerchFilms() {
 
 // pagination add
 
-refs.watchBtn.addEventListener('click', e => {
-  e.preventDefault();
-  console.log('click!!!');
 
-  const watchedFilms = JSON.parse(localStorage.getItem('WatchedFilm'));
-
-  refs.library.innerHTML = createMenuMoviesMarkup(Object.values(watchedFilms));
-  console.log(Object.values(watchedFilms));
-});
 
 const options = {
   totalItems: 100,

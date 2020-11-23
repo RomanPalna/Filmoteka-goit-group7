@@ -25,14 +25,7 @@
     margin-left: 13px;
 }
 
-.button-modal-is-active {
-    @extend %button;
-    font-size: 12px;
-    line-height: 16px;
-    min-width: 105px;
-    background-color: $accentColor;
-    color: $headerTextColor;
-}
+
 
 .button-modal {
     @extend %button;
@@ -41,6 +34,14 @@
     border: 1px solid $filmTitleColor;
     color: $filmTitleColor;
     min-width: 105px;
+}
+.button-modal-is-active {
+    @extend %button;
+    font-size: 12px;
+    line-height: 16px;
+    min-width: 105px;
+    background-color: $accentColor;
+    color: $headerTextColor;
 }
 
 .button-container {

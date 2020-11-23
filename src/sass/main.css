@@ -325,20 +325,20 @@ summary {
   display: list-item;
 }
 
-.btn-is-active, .btn-not-active, .button-modal-is-active, .button-modal {
+.btn-is-active, .btn-not-active, .button-modal, .button-modal-is-active {
   width: 129px;
   height: 44px;
   border-radius: 5px;
   color: #ffffff;
 }
 
-.btn-is-active:hover, .btn-not-active:hover, .button-modal-is-active:hover, .button-modal:hover, .btn-is-active:focus, .btn-not-active:focus, .button-modal-is-active:focus, .button-modal:focus {
+.btn-is-active:hover, .btn-not-active:hover, .button-modal:hover, .button-modal-is-active:hover, .btn-is-active:focus, .btn-not-active:focus, .button-modal:focus, .button-modal-is-active:focus {
   -webkit-transform: scale(1.1);
           transform: scale(1.1);
 }
 
 @media screen and (min-width: 768px) {
-  .btn-is-active, .btn-not-active, .button-modal-is-active, .button-modal {
+  .btn-is-active, .btn-not-active, .button-modal, .button-modal-is-active {
     width: 136px;
   }
 }
@@ -352,16 +352,8 @@ summary {
   border: 1px solid #ffffff;
 }
 
-.btn-is-active + .btn-is-active, .btn-not-active + .btn-is-active, .button-modal-is-active + .btn-is-active, .button-modal + .btn-is-active, .btn-is-active + .btn-not-active, .btn-not-active + .btn-not-active, .button-modal-is-active + .btn-not-active, .button-modal + .btn-not-active, .btn-is-active + .button-modal-is-active, .btn-not-active + .button-modal-is-active, .button-modal-is-active + .button-modal-is-active, .button-modal + .button-modal-is-active, .btn-is-active + .button-modal, .btn-not-active + .button-modal, .button-modal-is-active + .button-modal, .button-modal + .button-modal {
+.btn-is-active + .btn-is-active, .btn-not-active + .btn-is-active, .button-modal + .btn-is-active, .button-modal-is-active + .btn-is-active, .btn-is-active + .btn-not-active, .btn-not-active + .btn-not-active, .button-modal + .btn-not-active, .button-modal-is-active + .btn-not-active, .btn-is-active + .button-modal, .btn-not-active + .button-modal, .button-modal + .button-modal, .button-modal-is-active + .button-modal, .btn-is-active + .button-modal-is-active, .btn-not-active + .button-modal-is-active, .button-modal + .button-modal-is-active, .button-modal-is-active + .button-modal-is-active {
   margin-left: 13px;
-}
-
-.button-modal-is-active {
-  font-size: 12px;
-  line-height: 16px;
-  min-width: 105px;
-  background-color: #ff6b08;
-  color: #ffffff;
 }
 
 .button-modal {
@@ -370,6 +362,14 @@ summary {
   border: 1px solid #000000;
   color: #000000;
   min-width: 105px;
+}
+
+.button-modal-is-active {
+  font-size: 12px;
+  line-height: 16px;
+  min-width: 105px;
+  background-color: #ff6b08;
+  color: #ffffff;
 }
 
 .button-container {
