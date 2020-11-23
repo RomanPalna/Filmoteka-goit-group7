@@ -2,14 +2,16 @@ import './sass/main.css';
 import FilmApi from './js/film-api';
 import debounce from 'lodash.debounce';
 import filmCardTpl from './templates/filmCard.hbs';
-import './js/team-modal.js'
+import './js/team-modal.js';
 import modalTpl from './templates/modal.hbs';
-import {startSpinner, stopSpinner} from './js/spinner';
+import { startSpinner, stopSpinner } from './js/spinner';
 import StorageApi from './js/storage-api';
 
 // pagination stylezz
 import Pagination from 'tui-pagination';
 import 'tui-pagination/dist/tui-pagination.css';
+
+export { renderStartMarkup };
 
 let idFilm;
 const storageApi = new StorageApi();
@@ -17,6 +19,7 @@ const filmApi = new FilmApi();
 
 const refs = {
   galery: document.querySelector('.js-galery'),
+  library: document.querySelector('.js-library'),
 
   modal: document.querySelector('[data-modal]'),
   body: document.querySelector('body'),
@@ -27,7 +30,7 @@ const refs = {
   addWatchBtn: document.querySelector('.add-to-watched-js'),
   addQueueBtn: document.querySelector('.add-to-queue-js'),
 };
-console.log(refs);
+
 genresToFilms({}).then(r => {
   renderStartMarkup(r);
 });
@@ -51,6 +54,7 @@ async function genresToFilms({ page = 1 }) {
 
 function renderStartMarkup(movies) {
   refs.galery.innerHTML = createMenuMoviesMarkup(movies);
+  console.log(movies);
 
   [...document.getElementsByClassName('card__link')].forEach(
     (element, index, array) => {
@@ -100,18 +104,19 @@ function a(e) {
     let addQueueBtn = document.querySelector('.add-to-queue-js');
     let closeModalBtn = document.querySelector('[data-modal-close]');
 
-    addWatchBtn.addEventListener('click', addToWatchedList);
-    addQueueBtn.addEventListener('click', addToQueueList)
+    addWatchBtn.addEventListener('click', e => {
+      addToWatchedList(e, movie);
+    });
+    addQueueBtn.addEventListener('click', addToQueueList);
     closeModalBtn.addEventListener('click', toggleModal);
     toggleModal(movie);
   });
 }
 
-function addToWatchedList(e) {
+function addToWatchedList(e, movie) {
   e.preventDefault();
-  storageApi.addToWatched(idFilm);
+  storageApi.addToWatched(movie);
   console.log('adToWachedList');
-
 }
 
 function addToQueueList(e) {
@@ -165,6 +170,16 @@ function fetchingSerchFilms() {
 // }
 
 // pagination add
+
+refs.watchBtn.addEventListener('click', e => {
+  e.preventDefault();
+  console.log('click!!!');
+
+  const watchedFilms = JSON.parse(localStorage.getItem('WatchedFilm'));
+
+  refs.library.innerHTML = createMenuMoviesMarkup(Object.values(watchedFilms));
+  console.log(Object.values(watchedFilms));
+});
 
 const options = {
   totalItems: 100,
